@@ -21,3 +21,11 @@ You can install pnpm with:
 `pnpm install`
 
 ## Project Structure
+
+```
+/
+├── public/              # Static assets
+├── src/
+│   └── app/             # Next.js app router pages
+└── README.md            # Documentation for local setup
+```
