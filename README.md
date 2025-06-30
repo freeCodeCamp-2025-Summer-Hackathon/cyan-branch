@@ -29,4 +29,3 @@ You can install pnpm with:
 │   └── app/             # Next.js app router pages
 └── README.md            # Documentation for local setup
 ```
-Testing the PR rules...
