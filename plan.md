@@ -34,10 +34,10 @@ An anonymous suggestion box for workplaces, communities, or schools.
     /auth             // sign up/login
     /boxes            // create, get boxes
     /submissions      // create, get, respond
-/lib
-  mongodb.js          // db connection
-  auth.js             // session management
-/models               // schema definitions
+  /lib
+    mongodb.js        // db connection
+    auth.js           // session management
+  /models             // schema definitions
 ```
 
 ### API Routes
