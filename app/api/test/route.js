@@ -1,6 +1,7 @@
 import clientPromise from "@/lib/mongodb";
 import { NextResponse } from "next/server";
 
+// Gets sample test data from MongoDB Atlas
 export async function GET() {
   try {
     const client = await clientPromise;
