@@ -1,4 +1,11 @@
-# cyan-branch
+# Cyan Branch: Voice Box
+
+An anonymous suggestion box for workplaces, communities, or schools.
+
+### User Stories:
+- As an admin, I can create a box and share a submission link.
+- As a user, I can submit anonymous feedback.
+- As an admin, I can review and respond to submissions.
 
 ## Prerequisites
 
@@ -21,3 +28,11 @@ You can install pnpm with:
 `pnpm install`
 
 ## Project Structure
+
+```
+/
+├── public/              # Static assets
+├── src/
+│   └── app/             # Next.js app router pages
+└── README.md            # Documentation for local setup
+```
