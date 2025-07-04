@@ -1,5 +1,7 @@
 import { Corben, Gentium_Book_Plus } from "next/font/google";
 import "../styles/globals.css";
+import { ThemeProvider } from "next-themes";
+import "@/styles/colors.css";
 
 const gentiumBookPlus = Gentium_Book_Plus({
   variable: "--font-gentium-book-plus",
@@ -20,9 +22,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${gentiumBookPlus.variable} ${corben.variable}`}>
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
