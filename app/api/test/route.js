@@ -1,20 +1,13 @@
-import clientPromise from "@/lib/mongodb";
+import prisma from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
-// Gets sample test data from MongoDB Atlas
+// Gets sample test data from Prisma
 export async function GET() {
   try {
-    const client = await clientPromise;
-    const db = client.db('sample_mflix');
-    const movies = await db
-      .collection('movies')
-      .find({})
-      .sort({ metacritic: -1 })
-      .limit(10)
-      .toArray();
-    return NextResponse.json(movies);
+    const users = await prisma.user.findMany();
+    return NextResponse.json(users);
   } catch (err) {
     console.error(err);
-    return NextResponse.json({ err: 'Failed to fetch movies' }, { status: 500 })
+    return NextResponse.json({ err: "Failed to fetch users" }, { status: 500 });
   }
 }
