@@ -1,5 +1,5 @@
 import { Corben, Gentium_Book_Plus } from "next/font/google";
-import "./globals.css";
+import "../styles/globals.css";
 
 const gentiumBookPlus = Gentium_Book_Plus({
   variable: "--font-gentium-book-plus",
