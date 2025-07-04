@@ -184,3 +184,27 @@
     flex-flow: row;
   }
 }
+
+/*! Dark Mode */
+
+@media (prefers-color-scheme: dark) {
+  /*? Hero Section */
+
+  .hero {
+    border: 2px solid #8b8b8b;
+    background: linear-gradient(hsla(0, 0%, 20%, 0.6), hsla(0, 0%, 20%, 0.6)), url("/images/pexels-divinetechygirl-1181717.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .hero__link {
+    background-color: #000;
+    filter: drop-shadow(2px 2px 4px #0e0000);
+  }
+
+  /*? Description Section */
+  .description {
+    background-color: #050505;
+  }
+}

@@ -1,4 +1,4 @@
-/* HEADER STYLES*/
+/*? HEADER STYLES*/
 .header {
   width: 100%;
   display: flex;
@@ -35,4 +35,12 @@
 .header__navigation__listItem__link {
   text-transform: uppercase;
   padding: 0.5em;
+}
+
+/*! Media Query */
+
+@media (prefers-color-scheme: dark) {
+  .header {
+    border-bottom: 2px solid #8b8b8b;
+  }
 }
