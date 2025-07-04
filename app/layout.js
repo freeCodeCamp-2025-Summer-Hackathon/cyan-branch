@@ -1,14 +1,18 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Corben, Gentium_Book_Plus } from "next/font/google";
+import "../styles/globals.css";
+import { ThemeProvider } from "next-themes";
+import "@/styles/colors.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const gentiumBookPlus = Gentium_Book_Plus({
+  variable: "--font-gentium-book-plus",
+  subsets: ["latin", "cyrillic"],
+  weight: "400",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const corben = Corben({
+  variable: "--font-corben",
   subsets: ["latin"],
+  weight: "700",
 });
 
 export const metadata = {
@@ -18,9 +22,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${gentiumBookPlus.variable} ${corben.variable}`}>
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
