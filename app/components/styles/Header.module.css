@@ -1,0 +1,38 @@
+/* HEADER STYLES*/
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: hsl(0, 7%, 30%);
+  color: #fff;
+  border-bottom: 2px solid #f0eeee;
+}
+
+.header__logo {
+  font-size: 0.7rem;
+}
+
+.header__logoImage {
+  padding: 0.5em;
+  text-transform: uppercase;
+}
+
+.header__navigation {
+}
+
+.header__navigation__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header__navigation__listItem {
+  list-style: none;
+}
+
+.header__navigation__listItem__link {
+  text-transform: uppercase;
+  padding: 0.5em;
+}

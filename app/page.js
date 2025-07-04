@@ -1,95 +1,102 @@
 import Image from "next/image";
+import Link from "next/link";
+
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <main>
+        <article>
+          <section className={styles.hero}>
+            <div className={styles.hero__wrapper}>
+              <h2 className={styles.hero__title}>Have your say</h2>
+              <p className={styles.hero__body}>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+              <Link href="#" className={styles.hero__link}>
+                submit anonymously
+              </Link>
+            </div>
+          </section>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+          <hr className={styles.divider} />
+
+          <section className={styles.description}>
+            <h2 className={styles.desciption__title}>Describing how it works</h2>
+
+            <div className={styles.description__content}>
+              <div className={styles.description__content__header__container}>
+                <p className={styles.description__content__number}>1.</p>
+                <h3 className={styles.description__content__title}>Admin signup/login</h3>
+              </div>
+              <div className={styles.description__content__body__container}>
+                <p className={styles.description__content__body}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, dignissimos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque commodi maiores vel rem ut quaerat id laudantium dignissimos similique earum. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae reiciendis deleniti alias qui quis dignissimos, tenetur blanditiis nostrum illum doloremque.</p>
+                <Image className={styles.description__content__image} src="/images/pexels-buro-millennial-636760-1438081.jpg" alt="" width="300" height="200" />
+              </div>
+            </div>
+
+            <div className={styles.description__content}>
+              <div className={styles.description__content__header__container}>
+                <p className={styles.description__content__number}>2.</p>
+                <h3 className={styles.description__content__title}>Create suggestion box (name, description, etc)</h3>
+              </div>
+              <div className={[styles.description__content__body__container, styles.rtl].join(" ")}>
+                <p className={styles.description__content__body}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, dignissimos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque commodi maiores vel rem ut quaerat id laudantium dignissimos similique earum. Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <Image className={styles.description__content__image} src="/images/pexels-dvaughnbell-2068664.jpg" alt="" width="300" height="200" />
+              </div>
+            </div>
+
+            <div className={styles.description__content}>
+              <div className={styles.description__content__header__container}>
+                <p className={styles.description__content__number}>3.</p>
+                <h3 className={styles.description__content__title}>Generate shareable URL for submissions</h3>
+              </div>
+              <div className={styles.description__content__body__container}>
+                <p className={styles.description__content__body}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, dignissimos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque commodi maiores vel rem ut quaerat id laudantium dignissimos similique earum. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae reiciendis deleniti alias qui quis dignissimos, tenetur blanditiis nostrum illum doloremque.</p>
+                <Image className={styles.description__content__image} src="/images/pexels-pixabay-327533.jpg" alt="" width="300" height="200" />
+              </div>
+            </div>
+
+            <div className={styles.description__content}>
+              <div className={styles.description__content__header__container}>
+                <p className={styles.description__content__number}>4.</p>
+                <h3 className={styles.description__content__title}>View all owned boxes</h3>
+              </div>
+              <div className={[styles.description__content__body__container, styles.rtl].join(" ")}>
+                <p className={styles.description__content__body}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, dignissimos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque commodi maiores vel rem ut quaerat id laudantium dignissimos similique earum.</p>
+                <Image className={styles.description__content__image} src="/images/pexels-pixabay-327533.jpg" alt="" width="300" height="200" />
+              </div>
+            </div>
+          </section>
+
+          <hr className={styles.divider} />
+
+          <section className={styles.uses}>
+            <div className={styles.uses_container}>
+              <h3 className={styles.uses__title}>For your company</h3>
+              <Image className={styles.uses__image} src="/images/pexels-fauxels-3184416.jpg" alt="" width="300" height="200" />
+            </div>
+
+            <div className={styles.uses_container}>
+              <h3 className={styles.uses__title}>For your school</h3>
+              <Image className={styles.uses__image} src="/images/pexels-olly-789822.jpg" alt="" width="300" height="200" />
+            </div>
+
+            <div className={styles.uses_container}>
+              <h3 className={styles.uses__title}>For your community</h3>
+              <Image className={styles.uses__image} src="/images/pexels-helenalopes-933964.jpg" alt="" width="300" height="200" />
+            </div>
+          </section>
+        </article>
       </main>
       <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <div className={styles.footer__socials}>
+          {/* TODO:Add the icons */}
+          <i className={styles.footer__socials__icon}></i>
+          <i className={styles.footer__socials__icon}></i>
+          <i className={styles.footer__socials__icon}></i>
+          <i className={styles.footer__socials__icon}></i>
+        </div>
       </footer>
-    </div>
+    </>
   );
 }
