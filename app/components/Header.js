@@ -1,6 +1,6 @@
 'use client';
 import Link from "next/link";
-import styles from "./styles/Header.module.css";
+import styles from "../styles/Header.module.css";
 import { signIn } from "next-auth/react";
 import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";

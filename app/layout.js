@@ -3,7 +3,7 @@ import { Corben, Gentium_Book_Plus } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { SessionProvider } from 'next-auth/react';
 import "./styles/colors.css";
-import "./styles/colors.css";
+import "./styles/globals.css";
 import Header from "./components/Header";
 
 const gentiumBookPlus = Gentium_Book_Plus({
