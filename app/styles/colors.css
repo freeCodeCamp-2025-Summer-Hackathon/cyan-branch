@@ -1,9 +1,9 @@
 :root {
-  --background: white;
-  --foreground: black;
+  --background: hsl(0, 10%, 85%);
+  --foreground: #171717;
 }
 
 [data-theme="dark"] {
-  --background: black;
-  --foreground: white;
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
