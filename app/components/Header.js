@@ -1,6 +1,10 @@
+'use client';
+
 import Link from "next/link";
 
 import styles from "./styles/Header.module.css";
+import { signIn } from "next-auth/react";
+
 
 const Header = () => {
   return (
@@ -16,9 +20,11 @@ const Header = () => {
             </Link>
           </li>
           <li className={styles.header__navigation__listItem}>
-            <Link href="#" className={styles.header__navigation__listItem__link}>
+            {/* <Link onClick={() => signIn('google')} className={styles.header__navigation__listItem__link}>
               admin
-            </Link>
+            </Link> */}
+            {/* Updated Admin signIn button */}
+            <button onClick={() => signIn('google')} className={styles.header__navigation__listItem__btn}>admin</button>
           </li>
         </ul>
       </nav>
