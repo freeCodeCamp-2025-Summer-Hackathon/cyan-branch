@@ -7,7 +7,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix"
   },
   "dependencies": {
     "mongodb": "^6.17.0",
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@prisma/client": "^6.11.1",
+    "@stylistic/eslint-plugin": "^5.1.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.4",
     "prisma": "^6.11.1"
