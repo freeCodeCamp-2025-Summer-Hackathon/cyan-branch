@@ -18,6 +18,8 @@ const corben = Corben({
   weight: "700",
 });
 
+// This doesn't work with "use client" which is necessary for SessionProvider which is necessary for authentication...
+// TBD..? 
 // export const metadata = {
 //   title: "VoiceBox",
 //   description: "Create and manage anonymous suggestion boxes for your workplace, classroom, or community.",
