@@ -1,0 +1,9 @@
+:root {
+  --background: hsl(0, 10%, 85%);
+  --foreground: #171717;
+}
+
+[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}

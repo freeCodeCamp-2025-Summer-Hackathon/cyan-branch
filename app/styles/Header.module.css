@@ -18,8 +18,8 @@
   text-transform: uppercase;
 }
 
-.header__navigation {
-}
+/* .header__navigation {
+} */
 
 .header__navigation__list {
   display: flex;
