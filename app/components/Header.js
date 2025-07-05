@@ -24,7 +24,7 @@ const Header = () => {
               admin
             </Link> */}
             {/* Updated Admin signIn button */}
-            <button onClick={() => signIn('google')} className={styles.header__navigation__listItem__btn}>admin</button>
+            <button onClick={() => signIn('google', { callbackUrl: "/dashboard" })} className={styles.header__navigation__listItem__btn}>admin</button>
           </li>
         </ul>
       </nav>
