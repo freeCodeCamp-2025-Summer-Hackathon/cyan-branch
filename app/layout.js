@@ -1,18 +1,21 @@
 "use client";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Corben, Gentium_Book_Plus } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 import { SessionProvider } from 'next-auth/react';
-
+import "./styles/colors.css";
+import "./styles/colors.css";
 import Header from "./components/Header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const gentiumBookPlus = Gentium_Book_Plus({
+  variable: "--font-gentium-book-plus",
+  subsets: ["latin", "cyrillic"],
+  weight: "400",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const corben = Corben({
+  variable: "--font-corben",
   subsets: ["latin"],
+  weight: "700",
 });
 
 // export const metadata = {
@@ -22,11 +25,13 @@ const geistMono = Geist_Mono({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${gentiumBookPlus.variable} ${corben.variable}`}>
         <SessionProvider>
-          <Header />
-          {children}
+          <ThemeProvider>
+            <Header />
+            {children}
+          </ThemeProvider>
         </SessionProvider>
       </body>
     </html>
