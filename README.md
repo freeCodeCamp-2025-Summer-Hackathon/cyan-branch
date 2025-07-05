@@ -41,9 +41,10 @@ In order to generate the prisma client, follow these steps:
 
 ```
 /
+├── app/                 # Next.js app router pages        
+│   └── api/             # API routes
+├── lib/                 # Shared libraries and utilities
+├── prisma/              # Prisma schema
 ├── public/              # Static assets
-├── src/
-│   ├── app/             # Next.js app router pages
-│   └── prisma/          # Prisma schema
 └── README.md            # Documentation for local setup
 ```

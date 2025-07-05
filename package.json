@@ -1,5 +1,6 @@
 {
   "name": "cyan-branch",
+  "description": "A web app for creating and managing anonymous suggestion boxes for workplaces, communities, or schools.",
   "version": "0.1.0",
   "private": true,
   "scripts": {
