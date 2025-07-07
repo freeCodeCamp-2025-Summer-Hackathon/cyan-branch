@@ -4,7 +4,8 @@ import stylistic from "@stylistic/eslint-plugin";
 export default [
   {
     plugins: {
-      "@stylistic": stylistic
+      "@stylistic": stylistic,
+      "@next": next,
     },
     rules: {
       "indent": ["error", 2],

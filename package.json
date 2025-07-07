@@ -18,11 +18,14 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.28.0",
     "@eslint/eslintrc": "^3",
+    "@next/eslint-plugin-next": "^15.3.5",
     "@prisma/client": "^6.11.1",
     "@stylistic/eslint-plugin": "^5.1.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.4",
+    "eslint-plugin-react": "^7.37.5",
     "prisma": "^6.11.1"
   }
 }
