@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import styles from "./page.module.css";
+import SocialIcons from "./components/footer/SocialIcons";
 
 export default function Home() {
   return (
@@ -90,11 +91,15 @@ export default function Home() {
       </main>
       <footer className={styles.footer}>
         <div className={styles.footer__socials}>
-          {/* TODO:Add the icons */}
-          <i className={styles.footer__socials__icon}></i>
-          <i className={styles.footer__socials__icon}></i>
-          <i className={styles.footer__socials__icon}></i>
-          <i className={styles.footer__socials__icon}></i>
+          <i className={styles.footer__socials__icon}>
+            <SocialIcons iconName={"linkedin"} link={"https://linkedin.com"} />
+          </i>
+          <i className={styles.footer__socials__icon}>
+            <SocialIcons iconName={"github"} link={"https://github.com"} />
+          </i>
+          <i className={styles.footer__socials__icon}>
+            <SocialIcons iconName={"discord"} link={"https://discord.com"} />
+          </i>
         </div>
       </footer>
     </>
