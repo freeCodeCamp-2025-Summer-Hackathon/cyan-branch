@@ -147,13 +147,19 @@
   gap: 1em;
   width: 50%;
   margin-left: auto;
+  padding: 1em;
 }
 
 .footer__socials__icon {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: white;
+  /* background-color: white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 2.5rem;
 }
 
 /*! Media Query */
@@ -206,5 +212,9 @@
   /*? Description Section */
   .description {
     background-color: #050505;
+  }
+
+  .footer__socials__icon {
+    color: white;
   }
 }
