@@ -26,7 +26,11 @@ export async function getBoxById(boxId) {
         id: boxId,
       },
         include: {
+<<<<<<< HEAD
             submissions: true, // Include submissions associated with the box
+=======
+            items: true, // Include items associated with the box i.e. submissions
+>>>>>>> f6e7c37 (feat: add query file)
         },
     });
     return box;
