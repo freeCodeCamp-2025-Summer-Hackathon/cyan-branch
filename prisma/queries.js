@@ -4,12 +4,12 @@ import prisma from "@/lib/prisma";
 export async function getBoxes(adminId) {
   try {
     const boxes = await prisma.box.findMany({
-        where: {
-            adminId: adminId,
-        },
-        orderBy: {
-            createdAt: "desc",
-        }
+      where: {
+        adminId: adminId,
+      },
+      orderBy: {
+        createdAt: "desc",
+      }
     });
     return boxes;
   } catch (err) {
@@ -25,9 +25,9 @@ export async function getBoxById(boxId) {
       where: {
         id: boxId,
       },
-        include: {
-            submissions: true, // Include submissions associated with the box
-        },
+      include: {
+        submissions: true, // Include submissions associated with the box
+      },
     });
     return box;
   } catch (err) {
