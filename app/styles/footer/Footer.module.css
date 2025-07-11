@@ -1,0 +1,11 @@
+.footer {
+  padding: 1em;
+}
+
+.footer__socials {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1em;
+  width: 50%;
+  margin-left: auto;
+}

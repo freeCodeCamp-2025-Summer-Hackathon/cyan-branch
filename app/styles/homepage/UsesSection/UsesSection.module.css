@@ -1,0 +1,15 @@
+.uses {
+  margin-top: 3em;
+  padding: 2em;
+  display: flex;
+  flex-flow: column;
+  gap: 2.5rem;
+}
+
+/*! Media Query */
+
+@media screen and (min-width: 768px) {
+  .uses {
+    flex-flow: row;
+  }
+}
