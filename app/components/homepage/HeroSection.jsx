@@ -1,0 +1,20 @@
+import styles from "../../styles/homepage/HeroSection.module.css";
+import Link from "next/link";
+
+const HeroSection = () => {
+  return (
+    <section className={styles.hero}>
+      <div className={styles.hero__wrapper}>
+        <h2 className={styles.hero__title}>Have your say</h2>
+        <p className={styles.hero__body}>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        </p>
+        <Link href="#" className={styles.hero__link}>
+          submit anonymously
+        </Link>
+      </div>
+    </section>
+  )
+}
+
+export default HeroSection
