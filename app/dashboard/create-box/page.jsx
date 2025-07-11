@@ -1,6 +1,7 @@
 'use client';
-import { useSession, signIn } from 'next-auth/react';
 import { useEffect } from 'react';
+import { useSession, signIn } from 'next-auth/react';
+import { createBox } from '@/lib/createBox';
 
 export default function CreateBoxPage() {
   const { data: session, status } = useSession();
@@ -19,6 +20,13 @@ export default function CreateBoxPage() {
     return (
       <main>
         <h1>Create New Box</h1>
+        <form action={createBox}>
+          <label htmlFor="name">Name</label>
+          <input type="text" name="name" />
+          <label htmlFor="description">Description</label>
+          <input type="text" name="description" />
+          <button type="submit">Create box</button>
+        </form>
       </main>
     );
   }
