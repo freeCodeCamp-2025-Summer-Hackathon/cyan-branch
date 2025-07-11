@@ -1,6 +1,8 @@
 'use client';
 import { useSession, signIn } from 'next-auth/react';
 import { useEffect } from 'react';
+import styles from './page.module.css'
+import CreateBoxForm from '../components/Dashboard/CreateBoxForm';
 
 export default function AdminDashboard() {
   const { data: session, status } = useSession();
@@ -18,9 +20,9 @@ export default function AdminDashboard() {
 
   if (status === 'authenticated') {
     return (
-      <main>
-        <h1>Admin Dashboard</h1>
-        <h2>Welcome {session?.user?.name ?? 'Unknown User'}</h2>
+      <main className={styles.main}>
+        <h1 className={styles.title}>Hi, {session?.user?.name ?? 'Guest'}.</h1>
+        <CreateBoxForm />
       </main>
     );
   }
