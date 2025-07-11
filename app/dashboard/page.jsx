@@ -3,6 +3,7 @@ import { useSession, signIn } from 'next-auth/react';
 import { useEffect } from 'react';
 import styles from './page.module.css'
 import CreateBoxForm from '../components/Dashboard/CreateBoxForm';
+import DisplayOwnedBoxes from '../components/Dashboard/DisplayOwnedBoxes';
 
 export default function AdminDashboard() {
   const { data: session, status } = useSession();
@@ -23,6 +24,7 @@ export default function AdminDashboard() {
       <main className={styles.main}>
         <h1 className={styles.title}>Hi, {session?.user?.name ?? 'Guest'}.</h1>
         <CreateBoxForm />
+        <DisplayOwnedBoxes />
       </main>
     );
   }

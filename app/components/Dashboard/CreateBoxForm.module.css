@@ -1,10 +1,10 @@
 .create__box__container {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
   max-width: 500px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 0;
 }
 
 .create__box__form {
@@ -21,7 +21,7 @@
 
 .label {
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: #333;
 }
 
@@ -34,18 +34,20 @@
   background-color: #fff;
   color: #111;
   transition: border-color 0.2s ease;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .input:focus,
 .textarea:focus {
-  border-color: #0070f3;
+  border-color: hsl(0, 7%, 30%);
   outline: none;
 }
 
 .button {
   padding: 0.75rem 1rem;
-  font-size: 1rem;
-  background-color: #0070f3;
+  font-size: 1.5rem;
+  font-weight: 800;
+  background-color: hsl(0, 7%, 30%);
   color: white;
   border: none;
   border-radius: 0.4rem;
@@ -54,5 +56,5 @@
 }
 
 .button:hover {
-  background-color: #0059c1;
+  background-color: hsl(0, 7%, 46%);
 }

@@ -1,19 +1,8 @@
 'use client';
-import { useEffect } from 'react';
-import { useSession, signIn } from 'next-auth/react';
 import { createBox } from '@/lib/createBox';
 import styles from './CreateBoxForm.module.css';
 
 export default function CreateBoxForm() {
-  const { data: session, status } = useSession();
-
-  useEffect(() => {
-    if (status === 'unauthenticated') {
-      signIn('google', { callbackUrl: '/dashboard' });
-    }
-  }, [status]);
-
-  if (status === 'authenticated') {
     return (
       <div className={styles.create__box__container}>
         <h2>Create New Box</h2>
@@ -51,8 +40,4 @@ export default function CreateBoxForm() {
         </form>
       </div>
     );
-  }
-
-  // Fallback
-  return null;
 }
