@@ -1,5 +1,5 @@
 import { createBox } from '@/lib/createBox';
-import styles from './page.module.css';
+import styles from './dashboard.module.css';
 
 export default function CreateBoxForm() {
     return (
