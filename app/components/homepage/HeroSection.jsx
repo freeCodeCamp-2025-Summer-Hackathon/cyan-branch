@@ -1,7 +1,7 @@
-import styles from "../../styles/homepage/HeroSection.module.css";
 import Link from "next/link";
+import styles from "../../styles/homepage/HeroSection.module.css";
 
-const HeroSection = () => {
+function HeroSection() {
   return (
     <section className={styles.hero}>
       <div className={styles.hero__wrapper}>
@@ -14,7 +14,7 @@ const HeroSection = () => {
         </Link>
       </div>
     </section>
-  )
+  );
 }
 
-export default HeroSection
+export default HeroSection;
