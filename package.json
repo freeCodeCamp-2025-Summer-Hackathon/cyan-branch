@@ -28,6 +28,7 @@
     "@prisma/client": "^6.11.1",
     "eslint": "^9",
     "eslint-config-next": "15.3.4",
+    "eslint-plugin-format": "^1.0.1",
     "eslint-plugin-react-refresh": "^0.4.20",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.2",
