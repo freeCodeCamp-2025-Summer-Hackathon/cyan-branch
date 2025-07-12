@@ -36,12 +36,9 @@ export default antfu({
     "node/prefer-global/process": ["off"],
     "node/no-process-env": ["error"],
     'react/prefer-destructuring-assignment': 'off',
-    // "perfectionist/sort-imports": ["error", {
-    //   tsconfigRootDir: '.',
-    // }],
     // "unicorn/filename-case": ["error", {
     //   case: "pascalCase",
-    //   ignore: ["README.md"],
+    //   ignore: ["README.md", "plan.md"],
     // }],
   },
 });

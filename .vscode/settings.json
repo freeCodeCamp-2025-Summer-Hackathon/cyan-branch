@@ -71,11 +71,11 @@
     "yaml",
     "toml",
     "xml",
-    // "gql",
-    // "graphql",
+    "gql",
+    "graphql",
     "css",
-    // "less",
-    // "scss",
+    "less",
+    "scss",
     "pcss",
     "postcss"
   ]

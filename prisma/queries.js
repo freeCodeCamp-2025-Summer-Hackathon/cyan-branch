@@ -5,7 +5,7 @@ export async function getBoxes(adminId) {
   try {
     const boxes = await prisma.box.findMany({
         where: {
-            adminId: adminId,
+            adminId,
         },
         orderBy: {
             createdAt: "desc",
@@ -42,7 +42,7 @@ export async function createBox(adminId, boxData) {
     const box = await prisma.box.create({
       data: {
         ...boxData,
-        adminId: adminId,
+        adminId,
       },
     });
     return box;
@@ -105,7 +105,7 @@ export async function createSubmission(boxId, submissionData) {
     const submission = await prisma.submission.create({
       data: {
         ...submissionData,
-        boxId: boxId,
+        boxId,
       },
     });
     return submission;
@@ -120,7 +120,7 @@ export async function getSubmissionsByBoxId(boxId) {
   try {
     const submissions = await prisma.submission.findMany({
       where: {
-        boxId: boxId,
+        boxId,
       },
       orderBy: {
         createdAt: "desc",

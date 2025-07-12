@@ -5,6 +5,7 @@ import Link from "next/link";
 import styles from "../styles/Header.module.css";
 
 function Header() {
+  // eslint-disable-next-line no-unused-vars, unused-imports/no-unused-vars
   const { data: session, status } = useSession();
 
   return (
