@@ -19,7 +19,10 @@ export default antfu({
   },
 
   // Files to ignore when linting
-  ignores: ["plan.md"],
+  ignores: [
+    "plan.md",
+    // ".pnpm-store/*"
+  ],
 }, {
   // Plugins to include for linting process
   plugins: {
@@ -35,7 +38,7 @@ export default antfu({
     "antfu/no-top-level-await": ["off"],
     "node/prefer-global/process": ["off"],
     "node/no-process-env": ["error"],
-    'react/prefer-destructuring-assignment': 'off',
+    "react/prefer-destructuring-assignment": "off",
     // "unicorn/filename-case": ["error", {
     //   case: "pascalCase",
     //   ignore: ["README.md", "plan.md"],

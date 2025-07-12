@@ -30,6 +30,10 @@
     "eslint-config-next": "15.3.4",
     "eslint-plugin-react-refresh": "^0.4.20",
     "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
     "prisma": "^6.11.1"
+  },
+  "lint-staged": {
+    "*": "pnpm lint"
   }
 }
