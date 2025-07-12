@@ -1,3 +1,17 @@
+/* BoxCard.jsx */
+.card__container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  background-color: var(--site-theme);
+  padding: 1.2rem;
+  border-radius: 0.4rem;
+}
+
+.card__text {
+  color: white;
+}
+
 /* DisplayOwnedBoxes.jsx */
 .display__boxes__container {
   display: flex;
@@ -33,7 +47,7 @@
 .label {
   font-weight: 600;
   font-size: 1.1rem;
-  color: #333;
+  color: var(--gray-text);
 }
 
 .input,

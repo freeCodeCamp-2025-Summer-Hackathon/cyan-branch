@@ -2,9 +2,11 @@
   --background: hsl(0, 10%, 85%);
   --foreground: #171717;
   --site-theme: hsl(0, 7%, 30%);
+  --gray-text: #333;
 }
 
 [data-theme="dark"] {
   --background: #0a0a0a;
   --foreground: #ededed;
+  --gray-text: #d7d7d7;
 }
