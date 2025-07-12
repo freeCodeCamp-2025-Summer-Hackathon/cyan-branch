@@ -26,11 +26,7 @@ export async function getBoxById(boxId) {
         id: boxId,
       },
         include: {
-<<<<<<< HEAD
             submissions: true, // Include submissions associated with the box
-=======
-            items: true, // Include items associated with the box i.e. submissions
->>>>>>> f6e7c37 (feat: add query file)
         },
     });
     return box;
@@ -90,7 +86,7 @@ export async function deleteBox(boxId) {
 // Update a submission i.e respond to a submission
 export async function updateSubmission(submissionId, submissionData) {
   try {
-    const submission = await prisma.item.update({
+    const submission = await prisma.submission.update({
       where: {
         id: submissionId,
       },
@@ -100,5 +96,39 @@ export async function updateSubmission(submissionId, submissionData) {
   } catch (err) {
     console.error(err);
     throw new Error("Failed to update submission");
+  }
+}
+
+// Create a new submission
+export async function createSubmission(boxId, submissionData) {
+  try {
+    const submission = await prisma.submission.create({
+      data: {
+        ...submissionData,
+        boxId: boxId,
+      },
+    });
+    return submission;
+  } catch (err) {
+    console.error(err);
+    throw new Error("Failed to create submission");
+  }
+}
+
+// Get all submissions for a box
+export async function getSubmissionsByBoxId(boxId) {
+  try {
+    const submissions = await prisma.submission.findMany({
+      where: {
+        boxId: boxId,
+      },
+      orderBy: {
+        createdAt: "desc",
+      },
+    });
+    return submissions;
+  } catch (err) {
+    console.error(err);
+    throw new Error("Failed to fetch submissions");
   }
 }
