@@ -7,8 +7,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
+    "lint": "next lint --dir app lib prisma",
+    "lint:fix": "next lint --fix --dir app lib prisma",
     "prepare": "husky"
   },
   "dependencies": {
