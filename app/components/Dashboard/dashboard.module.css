@@ -1,3 +1,4 @@
+/* DisplayOwnedBoxes.jsx */
 .display__boxes__container {
   display: flex;
   flex-direction: column;
@@ -7,6 +8,7 @@
   padding: 2rem 0;
 }
 
+/* CreateBoxForm.jsx */
 .create__box__container {
   display: flex;
   flex-direction: column;
@@ -48,7 +50,7 @@
 
 .input:focus,
 .textarea:focus {
-  border-color: hsl(0, 7%, 30%);
+  border-color: var(--site-theme);
   outline: none;
 }
 
@@ -56,7 +58,7 @@
   padding: 0.75rem 1rem;
   font-size: 1.5rem;
   font-weight: 800;
-  background-color: hsl(0, 7%, 30%);
+  background-color: var(--site-theme);
   color: white;
   border: none;
   border-radius: 0.4rem;

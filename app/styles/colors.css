@@ -1,6 +1,7 @@
 :root {
   --background: hsl(0, 10%, 85%);
   --foreground: #171717;
+  --site-theme: hsl(0, 7%, 30%);
 }
 
 [data-theme="dark"] {
