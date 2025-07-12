@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: hsl(0, 7%, 30%);
+  background-color: var(--site-theme);
   color: #fff;
   border-bottom: 2px solid #f0eeee;
 }
