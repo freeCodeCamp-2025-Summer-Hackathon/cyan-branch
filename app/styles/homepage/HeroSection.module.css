@@ -6,7 +6,8 @@
   padding-bottom: 6em;
   margin-top: 2em;
   border: 2px solid #f0eeee;
-  background: linear-gradient(hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.6)), url("/images/pexels-divinetechygirl-1181717.jpg");
+  background:
+    linear-gradient(hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.6)), url("/images/pexels-divinetechygirl-1181717.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -45,7 +46,8 @@
 @media (prefers-color-scheme: dark) {
   .hero {
     border: 2px solid #8b8b8b;
-    background: linear-gradient(hsla(0, 0%, 20%, 0.6), hsla(0, 0%, 20%, 0.6)), url("/images/pexels-divinetechygirl-1181717.jpg");
+    background:
+      linear-gradient(hsla(0, 0%, 20%, 0.6), hsla(0, 0%, 20%, 0.6)), url("/images/pexels-divinetechygirl-1181717.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

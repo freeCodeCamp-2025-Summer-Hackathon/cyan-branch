@@ -1,11 +1,11 @@
-'use client';
+"use client";
+import { signIn, signOut, useSession } from "next-auth/react";
+
 import Link from "next/link";
 import styles from "../styles/Header.module.css";
-import { signIn } from "next-auth/react";
-import { signOut } from "next-auth/react";
-import { useSession } from "next-auth/react";
 
-const Header = () => {
+function Header() {
+  // eslint-disable-next-line no-unused-vars, unused-imports/no-unused-vars
   const { data: session, status } = useSession();
 
   return (
@@ -27,20 +27,22 @@ const Header = () => {
               admin
             </Link> */}
             {/* Updated Admin signIn button */}
-            {status === 'authenticated' ? (
-              <button onClick={() => signOut({ callbackUrl: "/" })} className={styles.header__navigation__listItem__btn}>
-                sign out
-              </button>
-            ) : (
-              <button onClick={() => signIn('google', { callbackUrl: "/dashboard" })} className={styles.header__navigation__listItem__btn}>
-                admin
-              </button>
-            )}
+            {status === "authenticated"
+              ? (
+                  <button type="button" onClick={() => signOut({ callbackUrl: "/" })} className={styles.header__navigation__listItem__btn}>
+                    sign out
+                  </button>
+                )
+              : (
+                  <button type="button" onClick={() => signIn("google", { callbackUrl: "/dashboard" })} className={styles.header__navigation__listItem__btn}>
+                    admin
+                  </button>
+                )}
           </li>
         </ul>
       </nav>
     </header>
   );
-};
+}
 
 export default Header;
