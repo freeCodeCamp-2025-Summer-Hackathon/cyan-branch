@@ -4,7 +4,7 @@ import { ThemeProvider } from "next-themes";
 import { SessionProvider } from 'next-auth/react';
 import "./styles/colors.css";
 import "./styles/globals.css";
-import Header from "./components/Header";
+import Header from "./components/header/Header";
 
 const gentiumBookPlus = Gentium_Book_Plus({
   variable: "--font-gentium-book-plus",
