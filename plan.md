@@ -88,7 +88,7 @@ Let admins sign up, log in, and create suggestion boxes
 - MongoDB connection
 - Email/password authentication (NextAuth)
 - Create admin dashboard
-  - Signup/login page
+  - Sign-up/login page
   - Create new box
   - View created boxes
 - Create form for new boxes
@@ -100,7 +100,7 @@ Let admins sign up, log in, and create suggestion boxes
 Allow anyone with link to end anonymous feedback
 - Submission page
   - Build public `/submit/[boxId]` page
-  - Santise form input with Prisma
+  - Sanitize form input with Prisma
 - Handle anonymous POST request
   - API route `POST /api/submissions`
   - Save message + box reference + timestamp
@@ -120,5 +120,5 @@ Let admins view and respond to submissions, edit/delete boxes
 
 ### Future features
 - Use slugs for shareable URLs
-- QR codes for shareble URLs
+- QR codes for shareable URLs
 - Analytics

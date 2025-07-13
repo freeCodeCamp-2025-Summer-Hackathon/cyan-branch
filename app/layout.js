@@ -1,10 +1,14 @@
 "use client";
-import { Corben, Gentium_Book_Plus } from "next/font/google";
+import { SessionProvider } from "next-auth/react";
 import { ThemeProvider } from "next-themes";
-import { SessionProvider } from 'next-auth/react';
+import { Corben, Gentium_Book_Plus } from "next/font/google";
+import Header from "./components/Header";
 import "./styles/colors.css";
 import "./styles/globals.css";
+<<<<<<< HEAD
 import Header from "./components/header/Header";
+=======
+>>>>>>> main
 
 const gentiumBookPlus = Gentium_Book_Plus({
   variable: "--font-gentium-book-plus",
@@ -19,7 +23,7 @@ const corben = Corben({
 });
 
 // This doesn't work with "use client" which is necessary for SessionProvider which is necessary for authentication...
-// TBD..? 
+// TBD..?
 // export const metadata = {
 //   title: "VoiceBox",
 //   description: "Create and manage anonymous suggestion boxes for your workplace, classroom, or community.",

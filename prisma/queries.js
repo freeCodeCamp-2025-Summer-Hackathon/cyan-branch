@@ -5,14 +5,15 @@ export async function getBoxes(adminId) {
   try {
     const boxes = await prisma.box.findMany({
       where: {
-        adminId: adminId,
+        adminId,
       },
       orderBy: {
         createdAt: "desc",
-      }
+      },
     });
     return boxes;
-  } catch (err) {
+  }
+  catch (err) {
     console.error(err);
     throw new Error("Failed to fetch boxes");
   }
@@ -30,7 +31,8 @@ export async function getBoxById(boxId) {
       },
     });
     return box;
-  } catch (err) {
+  }
+  catch (err) {
     console.error(err);
     throw new Error("Failed to fetch box");
   }
@@ -42,11 +44,12 @@ export async function createBox(adminId, boxData) {
     const box = await prisma.box.create({
       data: {
         ...boxData,
-        adminId: adminId,
+        adminId,
       },
     });
     return box;
-  } catch (err) {
+  }
+  catch (err) {
     console.error(err);
     throw new Error("Failed to create box");
   }
@@ -62,7 +65,8 @@ export async function updateBox(boxId, boxData) {
       data: boxData,
     });
     return box;
-  } catch (err) {
+  }
+  catch (err) {
     console.error(err);
     throw new Error("Failed to update box");
   }
@@ -77,7 +81,8 @@ export async function deleteBox(boxId) {
       },
     });
     return box;
-  } catch (err) {
+  }
+  catch (err) {
     console.error(err);
     throw new Error("Failed to delete box");
   }
@@ -86,15 +91,52 @@ export async function deleteBox(boxId) {
 // Update a submission i.e respond to a submission
 export async function updateSubmission(submissionId, submissionData) {
   try {
-    const submission = await prisma.item.update({
+    const submission = await prisma.submission.update({
       where: {
         id: submissionId,
       },
       data: submissionData,
     });
     return submission;
-  } catch (err) {
+  }
+  catch (err) {
     console.error(err);
     throw new Error("Failed to update submission");
+  }
+}
+
+// Create a new submission
+export async function createSubmission(boxId, submissionData) {
+  try {
+    const submission = await prisma.submission.create({
+      data: {
+        ...submissionData,
+        boxId,
+      },
+    });
+    return submission;
+  }
+  catch (err) {
+    console.error(err);
+    throw new Error("Failed to create submission");
+  }
+}
+
+// Get all submissions for a box
+export async function getSubmissionsByBoxId(boxId) {
+  try {
+    const submissions = await prisma.submission.findMany({
+      where: {
+        boxId,
+      },
+      orderBy: {
+        createdAt: "desc",
+      },
+    });
+    return submissions;
+  }
+  catch (err) {
+    console.error(err);
+    throw new Error("Failed to fetch submissions");
   }
 }

@@ -1,8 +1,8 @@
 import styles from "../../../styles/homepage/DescSection/DescSection.module.css";
-import items from "./DescItems.js";
 import DescFeature from "./DescFeature";
+import items from "./DescItems.js";
 
-const DescSection = () => {
+function DescSection() {
   return (
     <section className={styles.description}>
       <h2 className={styles.description__title}>Describing how it works</h2>
@@ -19,7 +19,7 @@ const DescSection = () => {
         />
       ))}
     </section>
-  )
+  );
 }
 
-export default DescSection
+export default DescSection;
