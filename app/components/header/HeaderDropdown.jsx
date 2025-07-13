@@ -1,41 +1,90 @@
 import { useSession } from 'next-auth/react';
 import { signIn, signOut } from 'next-auth/react';
+import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import styles from './Header.module.css';
+import Link from 'next/link';
+import styles from './Dropdown.module.css';
 
 export default function HeaderDropdown() {
   const { data: session, status } = useSession();
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+    }
+
+    if (dropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [dropdownOpen]);
+
+  const handleSignOut = () => {
+    setDropdownOpen(false);
+    signOut({ callbackUrl: '/' });
+  };
 
   return (
     <>
       {status === 'authenticated' ? (
-        <div>
-          <Image
-            // className={styles.}
-            src={session?.user?.image}
-            alt="User Google profile image"
-            width={24}
-            height={24}
-          />
+        <div className={styles.dropdown__container} ref={dropdownRef}>
           <button
-            onClick={() => signOut({ callbackUrl: '/' })}
-            className={styles.header__navigation__listItem__btn}
+            className={styles.dropdown__btn}
+            onClick={() => setDropdownOpen((prev) => !prev)}
+            aria-expanded={dropdownOpen}
+            aria-haspopup="true"
           >
-            Sign Out
+            {session?.user?.image ? (
+              <Image
+                className={styles.profile__image}
+                src={session.user.image}
+                alt="User Google profile image"
+                width={32}
+                height={32}
+              />
+            ) : (
+              <Image
+                src="/images/user-icon.svg"
+                alt="User Icon"
+                width={32}
+                height={32}
+              />
+            )}
           </button>
+          {dropdownOpen && (
+            <div className={styles.dropdown}>
+              <ul className={styles.dropdown__list}>
+                <li>
+                  <Link className={styles.dropdown__item} href="/dashboard">
+                    Admin Dashboard
+                  </Link>
+                </li>
+                <hr className={styles.dropdown__divider} />
+                <li>
+                  <button
+                    className={styles.dropdown__item}
+                    onClick={() => signOut('google', { callbackUrl: '/' })}
+                  >
+                    Sign Out
+                  </button>
+                </li>
+              </ul>
+            </div>
+          )}
         </div>
       ) : (
         <button
           onClick={() => signIn('google', { callbackUrl: '/dashboard' })}
-          className={styles.header__navigation__listItem__btn}
-        >
-          <Image
-            src="/images/user-icon.svg"
-            alt="User Icon"
-            width={24}
-            height={24}
-          />
-        </button>
+          className={styles.signIn__btn}
+        >Sign In</button>
       )}
     </>
   );

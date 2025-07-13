@@ -1,4 +1,3 @@
-/*? HEADER STYLES*/
 .header {
   width: 100%;
   display: flex;
@@ -7,6 +6,7 @@
   background-color: var(--site-theme);
   color: #fff;
   border-bottom: 2px solid #f0eeee;
+  padding: 0 1em;
 }
 
 .header__logo {
@@ -14,12 +14,9 @@
 }
 
 .header__logoImage {
-  padding: 0.5em;
+  padding: 0.5em 0;
   text-transform: uppercase;
 }
-
-/* .header__navigation {
-} */
 
 .header__navigation__list {
   display: flex;
@@ -36,18 +33,6 @@
   text-transform: uppercase;
   padding: 0.5em;
 }
-
-.header__navigation__listItem__btn {
-  text-transform: uppercase;
-  border: none;
-  background: none;
-  cursor: pointer;
-  margin: 0.5em;
-  color: inherit;
-  font-size: inherit;
-  letter-spacing: inherit;
-}
-
 
 /*! Media Query */
 
