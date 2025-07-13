@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import BoxCard from './BoxCard';
-import styles from './dashboard.module.css';
+import { useEffect, useState } from "react";
+import BoxCard from "./BoxCard";
+import styles from "./dashboard.module.css";
 
 export default function DisplayOwnedBoxes({ session }) {
   const [boxes, setBoxes] = useState([]);
@@ -22,7 +22,7 @@ export default function DisplayOwnedBoxes({ session }) {
   return (
     <div className={styles.display__boxes__container}>
       <h2>Your Boxes</h2>
-      {boxes.map((box) => (
+      {boxes.map(box => (
         <BoxCard key={box.id} name={box.name} description={box.description} />
       ))}
     </div>

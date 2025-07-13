@@ -1,7 +1,7 @@
-import styles from "../../../styles/homepage/UsesSection/UsesItem.module.css";
 import Image from "next/image";
+import styles from "../../../styles/homepage/UsesSection/UsesItem.module.css";
 
-const UsesItem = (props) => {
+function UsesItem(props) {
   return (
     <div className={styles.uses_container}>
       <h3 className={styles.uses__title}>{props.labelText}</h3>
@@ -13,7 +13,7 @@ const UsesItem = (props) => {
         height="200"
       />
     </div>
-  )
+  );
 }
 
-export default UsesItem
+export default UsesItem;

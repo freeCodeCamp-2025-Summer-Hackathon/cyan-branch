@@ -22,7 +22,7 @@ const descItems = [
     featDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, dignissimos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque commodi maiores vel rem ut quaerat id laudantium dignissimos similique earum.",
     imgSrc: "/images/pexels-pixabay-327533.jpg",
     altText: "",
-  }
+  },
 ];
 
 export default descItems;

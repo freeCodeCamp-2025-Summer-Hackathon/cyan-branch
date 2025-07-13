@@ -1,7 +1,7 @@
-import styles from "../../../styles/homepage/DescSection/DescFeature.module.css";
 import Image from "next/image";
+import styles from "../../../styles/homepage/DescSection/DescFeature.module.css";
 
-const DescFeature = ({ num, featName, featDesc, imgSrc, altText, rtl }) => {
+function DescFeature({ num, featName, featDesc, imgSrc, altText, rtl }) {
   /**
    * num: number
    * featName: string
@@ -24,7 +24,7 @@ const DescFeature = ({ num, featName, featDesc, imgSrc, altText, rtl }) => {
       <div
         className={[
           styles.description__content__body__container,
-          rtl ? styles.rtl : ""
+          rtl ? styles.rtl : "",
         ].join(" ")}
       >
         <p className={styles.description__content__body}>
@@ -40,6 +40,6 @@ const DescFeature = ({ num, featName, featDesc, imgSrc, altText, rtl }) => {
       </div>
     </div>
   );
-};
+}
 
 export default DescFeature;
