@@ -34,9 +34,7 @@
   padding: 0.5em;
 }
 
-<<<<<<< HEAD:app/components/header/Header.module.css
-=======
-.header__navigation__listItem__btn {
+<<<<<<< HEAD:app/components/header/header.module.css ======= .header__navigation__listItem__btn {
   text-transform: uppercase;
   border: none;
   background: none;

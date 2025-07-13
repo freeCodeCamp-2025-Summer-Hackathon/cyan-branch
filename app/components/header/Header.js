@@ -1,10 +1,9 @@
-'use client';
+"use client";
 import Link from "next/link";
 import styles from "./Header.module.css";
 import HeaderDropdown from "./HeaderDropdown";
 
-const Header = () => {
-
+function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.header__logo}>
@@ -26,6 +25,6 @@ const Header = () => {
       </nav>
     </header>
   );
-};
+}
 
 export default Header;

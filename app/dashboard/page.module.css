@@ -5,7 +5,7 @@
 .content__container {
   display: flex;
   flex-direction: column;
-  align-items: center
+  align-items: center;
 }
 
 .title {
@@ -26,22 +26,22 @@
 }
 
 .loading__dots::after {
-  content: '...';
+  content: "...";
   animation: dots 1s steps(3, end) infinite;
 }
 
 @keyframes dots {
   0% {
-    content: '';
+    content: "";
   }
   33% {
-    content: '.';
+    content: ".";
   }
   66% {
-    content: '..';
+    content: "..";
   }
   100% {
-    content: '...';
+    content: "...";
   }
 }
 

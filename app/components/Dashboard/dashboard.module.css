@@ -1,9 +1,11 @@
 /* Shared rules */
-.button:hover, .card__container:hover {
+.button:hover,
+.card__container:hover {
   background-color: hsl(0, 7%, 38%);
 }
 
-.create__box__container, .display__boxes__container {
+.create__box__container,
+.display__boxes__container {
   max-width: 500px;
 }
 
@@ -114,7 +116,8 @@
 
 @media only screen and (min-width: 768px) {
   /* Desktop mode */
-  .create__box__container, .display__boxes__container {
+  .create__box__container,
+  .display__boxes__container {
     margin: 0 1em;
   }
 

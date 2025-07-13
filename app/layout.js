@@ -5,10 +5,6 @@ import { Corben, Gentium_Book_Plus } from "next/font/google";
 import Header from "./components/Header";
 import "./styles/colors.css";
 import "./styles/globals.css";
-<<<<<<< HEAD
-import Header from "./components/header/Header";
-=======
->>>>>>> main
 
 const gentiumBookPlus = Gentium_Book_Plus({
   variable: "--font-gentium-book-plus",
