@@ -10,7 +10,6 @@ export default function HeaderDropdown() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(event) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -29,7 +28,7 @@ export default function HeaderDropdown() {
 
   const handleSignOut = () => {
     setDropdownOpen(false);
-    signOut({ callbackUrl: '/' });
+    signOut('google', { callbackUrl: '/' });
   };
 
   return (
@@ -42,6 +41,7 @@ export default function HeaderDropdown() {
             aria-expanded={dropdownOpen}
             aria-haspopup="true"
           >
+            {/* Use Google profile image or default account icon */}
             {session?.user?.image ? (
               <Image
                 className={styles.profile__image}
@@ -71,7 +71,7 @@ export default function HeaderDropdown() {
                 <li>
                   <button
                     className={styles.dropdown__item}
-                    onClick={() => signOut('google', { callbackUrl: '/' })}
+                    onClick={handleSignOut}
                   >
                     Sign Out
                   </button>

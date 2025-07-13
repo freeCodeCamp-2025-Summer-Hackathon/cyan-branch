@@ -1,23 +1,27 @@
 'use client';
-import { useSession, signIn } from 'next-auth/react';
 import { useEffect } from 'react';
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 import styles from './page.module.css';
 import CreateBoxForm from '../components/dashboard/CreateBoxForm';
 import DisplayOwnedBoxes from '../components/dashboard/DisplayOwnedBoxes';
-import { Corben, Gentium_Book_Plus } from "next/font/google";
 
 export default function AdminDashboard() {
   const { data: session, status } = useSession();
+  const router = useRouter();
 
   useEffect(() => {
     if (status === 'unauthenticated') {
-      // Prevent unregistered users from accessing admin dashboard
-      signIn('google', { callbackUrl: '/dashboard' });
+      // Redirect unauthenticated users to homepage, should probably redirect to a
+      // login/signup page in the future
+      router.push('/');
     }
-  }, [status]);
+  }, [status, router]);
 
   if (status === 'loading') {
-    return <p>Loading...</p>;
+    return (
+      <p className={`${styles.loading__p} ${styles.loading__dots}`}>Loading</p>
+    );
   }
 
   if (status === 'authenticated') {
@@ -32,6 +36,5 @@ export default function AdminDashboard() {
     );
   }
 
-  // Fallback, can probably be improved to something in the future
   return null;
 }

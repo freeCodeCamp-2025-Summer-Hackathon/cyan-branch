@@ -16,6 +16,35 @@
   letter-spacing: 3px;
 }
 
+.loading__p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.loading__dots::after {
+  content: '...';
+  animation: dots 1s steps(3, end) infinite;
+}
+
+@keyframes dots {
+  0% {
+    content: '';
+  }
+  33% {
+    content: '.';
+  }
+  66% {
+    content: '..';
+  }
+  100% {
+    content: '...';
+  }
+}
+
 @media only screen and (min-width: 768px) {
   /* Desktop mode */
   .content__container {
