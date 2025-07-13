@@ -2,9 +2,9 @@ name: Lint CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [main]
   pull_request:
-    branches: [ "main" ]
+    branches: [main]
 
 jobs:
   build:
@@ -21,6 +21,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           # Current LTS version of node
-          node-version: '22.x'
+          node-version: 22.x
       - run: pnpm i
       - run: pnpm lint
