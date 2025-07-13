@@ -1,6 +1,6 @@
 import { getServerSession } from "next-auth/next";
 import { NextResponse } from "next/server";
-import { authOptions } from "@/lib/auth_options";
+import { authOptions } from "@/lib/authOptions";
 import { getBoxes } from "@/prisma/queries";
 
 // GET /api/v1/boxes - Get all boxes for the authenticated user
