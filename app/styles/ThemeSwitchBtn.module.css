@@ -1,0 +1,48 @@
+/*? TOGGLE STYLES*/
+.theme__listItem {
+  list-style: none;
+  height: 100%;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 0.5em; */
+}
+
+.theme__container {
+  display: flex;
+  border-radius: 100px;
+  background-color: var(--background);
+  position: relative;
+  width: 60%;
+  height: 100%;
+  padding: 0.8em;
+}
+
+.theme__slider {
+  all: unset;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--foreground);
+  border-radius: 40px;
+  transition: transform 0.3s ease;
+}
+
+.theme__clicker {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  border-radius: 40px;
+  background-color: transparent;
+}
