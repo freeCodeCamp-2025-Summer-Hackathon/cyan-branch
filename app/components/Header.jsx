@@ -1,12 +1,16 @@
 "use client";
 import { signIn, signOut, useSession } from "next-auth/react";
+import { useTheme } from "next-themes";
 
 import Link from "next/link";
 import styles from "../styles/Header.module.css";
+import ThemeSwitchBtn from "./ThemeSwitchBtn";
 
 function Header() {
   // eslint-disable-next-line no-unused-vars, unused-imports/no-unused-vars
   const { data: session, status } = useSession();
+  // Retrieve the current theme, i.e. dark vs. light mode
+  const { resolvedTheme, setTheme } = useTheme();
 
   return (
     <header className={styles.header}>
@@ -17,9 +21,13 @@ function Header() {
       </div>
       <nav className={styles.header__navigation}>
         <ul className={styles.header__navigation__list}>
+          <ThemeSwitchBtn
+            resolvedTheme={resolvedTheme}
+            setTheme={setTheme}
+          />
           <li className={styles.header__navigation__listItem}>
             <Link href="#" className={styles.header__navigation__listItem__link}>
-              submit
+              Submit
             </Link>
           </li>
           <li className={styles.header__navigation__listItem}>
@@ -30,12 +38,12 @@ function Header() {
             {status === "authenticated"
               ? (
                   <button type="button" onClick={() => signOut({ callbackUrl: "/" })} className={styles.header__navigation__listItem__btn}>
-                    sign out
+                    Sign out
                   </button>
                 )
               : (
                   <button type="button" onClick={() => signIn("google", { callbackUrl: "/dashboard" })} className={styles.header__navigation__listItem__btn}>
-                    admin
+                    Admin
                   </button>
                 )}
           </li>
