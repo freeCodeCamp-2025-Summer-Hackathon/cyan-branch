@@ -97,11 +97,13 @@ export default function BoxPage({ params }) {
           ? (
               <div className={styles.submissions}>
                 <h2>Submissions</h2>
-                {submissions.map(submission => (
-                  <div key={submission.id} className={styles.submission}>
-                    <p>{submission.message}</p>
-                  </div>
-                ))}
+                <ul>
+                  {submissions.map(submission => (
+                    <li key={submission.id} className={styles.submission}>
+                      <p>{submission.message}</p>
+                    </li>
+                  ))}
+                </ul>
               </div>
             )
           : (
