@@ -1,12 +1,12 @@
+/*? HEADER STYLES*/
 .header {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--site-theme);
+  background-color: hsl(0, 7%, 30%);
   color: #fff;
   border-bottom: 2px solid #f0eeee;
-  padding: 0 1em;
 }
 
 .header__logo {
@@ -14,8 +14,12 @@
 }
 
 .header__logoImage {
-  padding: 0.5em 0;
+  padding: 0.5em;
   text-transform: uppercase;
+}
+
+.header__navigation {
+  height: 100%;
 }
 
 .header__navigation__list {
@@ -23,27 +27,35 @@
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  height: 100%;
 }
 
 .header__navigation__listItem {
   list-style: none;
+  height: 100%;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
 }
 
 .header__navigation__listItem__link {
   text-transform: uppercase;
-  padding: 0.5em;
+  height: 100%;
 }
 
 .header__navigation__listItem__btn {
   text-transform: uppercase;
+  height: 100%;
   border: none;
   background: none;
   cursor: pointer;
-  margin: 0.5em;
   color: inherit;
   font-size: inherit;
   letter-spacing: inherit;
 }
+
 /*! Media Query */
 
 @media (prefers-color-scheme: dark) {

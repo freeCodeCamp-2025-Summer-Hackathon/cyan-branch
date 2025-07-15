@@ -1,9 +1,14 @@
 "use client";
+import { useTheme } from "next-themes";
 import Link from "next/link";
 import styles from "./Header.module.css";
 import HeaderDropdown from "./HeaderDropdown";
+import ThemeSwitchBtn from "./ThemeSwitchBtn";
 
 function Header() {
+  // Retrieve the current theme, i.e. dark vs. light mode
+  const { resolvedTheme, setTheme } = useTheme();
+
   return (
     <header className={styles.header}>
       <div className={styles.header__logo}>
@@ -13,9 +18,13 @@ function Header() {
       </div>
       <nav className={styles.header__navigation}>
         <ul className={styles.header__navigation__list}>
+          <ThemeSwitchBtn
+            resolvedTheme={resolvedTheme}
+            setTheme={setTheme}
+          />
           <li className={styles.header__navigation__listItem}>
             <Link href="#" className={styles.header__navigation__listItem__link}>
-              submit
+              Submit
             </Link>
           </li>
           <li className={styles.header__navigation__listItem}>

@@ -28,7 +28,7 @@ export default function AdminDashboard() {
     return (
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Hi,
+          Hi,&nbsp;
           {session?.user?.name ?? "Guest"}
           .
         </h1>
