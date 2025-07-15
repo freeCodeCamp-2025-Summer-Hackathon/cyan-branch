@@ -23,7 +23,7 @@ export default function DisplayOwnedBoxes({ session }) {
     <div className={styles.display__boxes__container}>
       <h2>Your Boxes</h2>
       {boxes.map(box => (
-        <BoxCard key={box.id} name={box.name} description={box.description} />
+        <BoxCard key={box.id} name={box.name} description={box.description} boxId={box.id} />
       ))}
     </div>
   );

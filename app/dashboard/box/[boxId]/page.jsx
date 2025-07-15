@@ -1,6 +1,7 @@
 "use client";
 
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./page.module.css";
@@ -56,7 +57,7 @@ export default function BoxPage({ params }) {
     return (
       <main className={styles.main}>
         <div className={styles.box__container}>
-          <p>Loading...</p>
+          <p className={`${styles.loading__p} ${styles.loading__dots}`}>Loading</p>
         </div>
       </main>
     );
@@ -87,6 +88,7 @@ export default function BoxPage({ params }) {
 
   return (
     <main className={styles.main}>
+      <Link className={styles.dashboard__link} href="/dashboard">Back to dashboard</Link>
       <div className={styles.box__container}>
         <h1 className={styles.title}>{box.name}</h1>
         <p className={styles.description}>{box.description}</p>

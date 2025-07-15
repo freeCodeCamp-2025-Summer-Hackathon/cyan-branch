@@ -1,5 +1,6 @@
 .main {
   margin: 0 1rem;
+  padding-top: 2rem;
 }
 
 .box__container {
@@ -9,6 +10,7 @@
   max-width: 500px;
   margin: 0 auto;
   margin-top: 3rem;
+  padding-bottom: 1rem;
 }
 
 .title {
@@ -20,4 +22,33 @@
 .description {
   text-align: center;
   font-style: italic;
+}
+
+.dashboard__link {
+  padding: 0.75rem 1rem;
+  font-weight: 800;
+  background-color: var(--site-theme);
+  color: white;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.loading__p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.loading__dots::after {
+  content: "...";
+  animation: dots 1s steps(3, end) infinite;
+}
+
+.dashboard__link:hover {
+  background-color: hsl(0, 7%, 38%);
 }
