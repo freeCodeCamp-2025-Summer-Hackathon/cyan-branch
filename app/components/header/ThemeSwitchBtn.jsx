@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import styles from "../styles/ThemeSwitchBtn.module.css";
+import styles from "./ThemeSwitchBtn.module.css";
 
 export default function ThemeSwitchBtn({ resolvedTheme, setTheme }) {
   const [mounted, setMounted] = useState(false);

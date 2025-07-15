@@ -2,7 +2,7 @@
 import { SessionProvider } from "next-auth/react";
 import { ThemeProvider } from "next-themes";
 import { Corben, Gentium_Book_Plus } from "next/font/google";
-import Header from "./components/Header";
+import Header from "./components/header/Header";
 import "./styles/colors.css";
 import "./styles/globals.css";
 
