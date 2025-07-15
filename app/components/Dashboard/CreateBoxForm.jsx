@@ -1,11 +1,11 @@
-import { createBox } from "@/lib/createBox";
+import { createBoxAction } from "@/lib/actions";
 import styles from "./dashboard.module.css";
 
 export default function CreateBoxForm() {
   return (
     <div className={styles.create__box__container}>
       <h2>Create New Box</h2>
-      <form action={createBox} className={styles.create__box__form}>
+      <form action={createBoxAction} className={styles.create__box__form}>
         <div className={styles.input__group}>
           <label htmlFor="name" className={styles.label}>
             Name
