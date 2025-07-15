@@ -33,7 +33,6 @@
 .header__navigation__listItem {
   list-style: none;
   height: 100%;
-  width: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
