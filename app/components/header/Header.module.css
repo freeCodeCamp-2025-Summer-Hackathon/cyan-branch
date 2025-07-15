@@ -26,7 +26,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
   height: 100%;
 }
 
@@ -60,5 +59,12 @@
 @media (prefers-color-scheme: dark) {
   .header {
     border-bottom: 2px solid #8b8b8b;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* Desktop mode */
+  .header__navigation__list {
+    gap: 1rem;
   }
 }
