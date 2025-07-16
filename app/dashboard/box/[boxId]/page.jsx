@@ -2,20 +2,18 @@
 
 import { useSession } from "next-auth/react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 
 export default function BoxPage({ params }) {
   const { data: session, status } = useSession();
-  const router = useRouter();
   const [box, setBox] = useState(null);
   const [submissions, setSubmissions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    async function fetchData() {
+    async function fetchSubmissions() {
       try {
         setLoading(true);
         setError(null);
@@ -24,12 +22,9 @@ export default function BoxPage({ params }) {
 
         const boxRes = await fetch(`/api/boxes/${boxId}`);
         if (!boxRes.ok) {
-          if (boxRes.status === 404) {
-            router.push("/404");
-            return;
-          }
           throw new Error(`Failed to fetch box: ${boxRes.status}`);
         }
+
         const boxData = await boxRes.json();
         setBox(boxData);
 
@@ -50,14 +45,14 @@ export default function BoxPage({ params }) {
     }
 
     if (status !== "loading")
-      fetchData();
-  }, [params, session?.user?.id, status, router]);
+      fetchSubmissions();
+  }, [params, session?.user?.id, status]);
 
   if (loading || status === "loading") {
     return (
       <main className={styles.main}>
         <div className={styles.box__container}>
-          <p className={`${styles.loading__p} ${styles.loading__dots}`}>Loading</p>
+          <p className={`${styles.message__p} ${styles.loading__dots}`}>Loading</p>
         </div>
       </main>
     );
@@ -67,7 +62,7 @@ export default function BoxPage({ params }) {
     return (
       <main className={styles.main}>
         <div className={styles.box__container}>
-          <p>
+          <p className={styles.message__p}>
             Error:
             {error}
           </p>
@@ -80,7 +75,7 @@ export default function BoxPage({ params }) {
     return (
       <main className={styles.main}>
         <div className={styles.box__container}>
-          <p>Box not found</p>
+          <p className={styles.message__p}>Box not found</p>
         </div>
       </main>
     );
@@ -109,7 +104,7 @@ export default function BoxPage({ params }) {
           : (
               session?.user?.id && (
                 <div className={styles.noSubmissions}>
-                  <p>No submissions found for this box.</p>
+                  <p className={styles.message__p}>No submissions found for this box.</p>
                 </div>
               )
             )}

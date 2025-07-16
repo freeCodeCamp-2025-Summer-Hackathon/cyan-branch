@@ -35,7 +35,7 @@
   transition: background-color 0.2s ease;
 }
 
-.loading__p {
+.message__p {
   display: flex;
   align-items: center;
   justify-content: center;

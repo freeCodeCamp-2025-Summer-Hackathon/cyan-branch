@@ -60,7 +60,7 @@ pnpm dev
 
 - Open `http://localhost:3000/dashboard` in the browser
 - Sign in with Google
-- You should now see your credentials in the Atlas Cloud DB or by going to `http://localhost:3000/api/test`
+- You should now see your credentials in the Atlas Cloud DB
 
 ## Project Structure
 

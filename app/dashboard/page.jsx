@@ -34,7 +34,7 @@ export default function AdminDashboard() {
         </h1>
         <div className={styles.content__container}>
           <CreateBoxForm />
-          <DisplayOwnedBoxes session={session} />
+          <DisplayOwnedBoxes session={session} status={status} />
         </div>
       </main>
     );
