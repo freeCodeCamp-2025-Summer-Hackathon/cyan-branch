@@ -7,6 +7,7 @@
 .create__box__container,
 .display__boxes__container {
   max-width: 500px;
+  width: 100%;
 }
 
 /* BoxCard.jsx */
@@ -14,6 +15,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: 100%;
   justify-content: space-between;
   background-color: var(--site-theme);
   border-radius: 0.4rem;
