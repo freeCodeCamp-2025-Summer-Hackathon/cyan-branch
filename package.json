@@ -7,6 +7,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
+    "db:seed": "node prisma/seed.js",
     "lint": "next lint --dir app lib prisma prisma README.md",
     "lint:fix": "next lint --fix --dir app lib prisma README.md",
     "prepare": "husky"
