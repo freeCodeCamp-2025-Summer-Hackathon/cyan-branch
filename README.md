@@ -40,33 +40,43 @@ In order to generate the prisma client, follow these steps:
 ## Auth Setup
 
 1. Add the following environment variables to `.env`:
+
 ```
 GOOGLE_ID=google-client-id
 GOOGLE_SECRET=google-client-secret
 ```
+
 2. Update prisma client:
+
 ```
 pnpm prisma generate
 ```
+
 3. Test Google sign-in:
+
 ```
 pnpm dev
 ```
+
 - Open `http://localhost:3000/dashboard` in the browser
 - Sign in with Google
-- You should now see your credentials in the Atlas Cloud DB or by going to `http://localhost:3000/api/test`
+- You should now see your credentials in the Atlas Cloud DB
 
 ## Project Structure
 
 ```
 /
-├── app/                 # Next.js app router pages        
-│   └── api/             # API routes
-│       ├── test/        # Test GET request
-│       └── auth/        # User authentication with Google OAuth and NextAuth
-├── login/               # Login page (temp?)
-├── lib/                 # Shared libraries and utilities
-├── prisma/              # Prisma schema
-├── public/              # Static assets
-└── README.md            # Documentation for local setup
+├── app/                    # Next.js app router pages
+│   ├── api/                # API routes
+│   │   ├── auth/           # User authentication with Google OAuth and NextAuth
+│   │   ├── boxes/          # Endpoints to create and retrieve anonymous suggestion boxes
+│   │   └── submissions/    # Endpoints to submit and retrieve anonymous submissions for each box
+│   ├── dashboard/          # Admin dashboard for managing boxes and viewing submissions
+│   ├── submit/             # Public-facing page for submitting anonymous suggestions to a box
+│   ├── components/         # Reusable React components
+│   └── styles/             # Global and module CSS for styling the app
+├── lib/                    # Shared libraries and utilities
+├── prisma/                 # Prisma schema and queries
+├── public/                 # Static assets
+└── README.md               # Documentation for local setup
 ```
