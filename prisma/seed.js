@@ -5,8 +5,8 @@ import {
   createSubmission,
 } from "./queries.js";
 
-// Enter Atlas Cloud userId here:
-const adminId = "686943e8fe64107c2a61f343";
+// Enter Atlas Cloud User.id here:
+const adminId = "atlas-cloud-user-id-string";
 
 const boxData
   = {
