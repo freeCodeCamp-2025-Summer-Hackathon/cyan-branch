@@ -1,4 +1,5 @@
-import prisma from "@/lib/prisma";
+// Cannot use '@' import as Node.js doesn't recognise it (when running prisma/seed.js)
+import prisma from "../lib/prisma.js";
 
 // Get all the boxes
 export async function getBoxes(adminId) {
