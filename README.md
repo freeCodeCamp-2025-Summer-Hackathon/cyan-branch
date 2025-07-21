@@ -32,18 +32,19 @@ You can install pnpm with:
 
 In order to generate the prisma client, follow these steps:
 
-- Create a .env file contaning the .env.local file content. This is necessary to generate the Prisma client since
-  .env.local is only recognized by the NextJs server
-
+- Create a .env file contaning the .env.example content
 - Generate the client with `pnpm dlx prisma generate`
 
 ## Auth Setup
 
-1. Add the following environment variables to `.env`:
+1. Make sure you have updated the following environment variables on `.env`:
 
 ```
 GOOGLE_ID=google-client-id
 GOOGLE_SECRET=google-client-secret
+
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=run `openssl rand -base64 32` and replace here
 ```
 
 2. Update prisma client:
@@ -58,9 +59,19 @@ pnpm prisma generate
 pnpm dev
 ```
 
-- Open `http://localhost:3000/dashboard` in the browser
-- Sign in with Google
-- You should now see your credentials in the Atlas Cloud DB
+- Sign in with Google by click 'Sign In' the top right of the header
+- You should now see your credentials in the User collection of the Atlas Cloud DB
+
+## Seeding the database
+
+1. Copy your User.id property from the Atlas Cloud database to the following variable in `prisma/seed.js`:
+
+```
+adminId = "longAdminIdString";
+```
+
+2. Run `pnpm db:seed`
+3. You should now see an example box and suggestions on the admin dashboard
 
 ## Project Structure
 
