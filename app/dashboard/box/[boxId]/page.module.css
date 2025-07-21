@@ -52,3 +52,9 @@
 .dashboard__link:hover {
   background-color: hsl(0, 7%, 38%);
 }
+
+.submissions__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}

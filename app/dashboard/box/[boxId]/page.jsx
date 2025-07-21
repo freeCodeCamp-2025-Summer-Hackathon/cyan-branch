@@ -3,6 +3,7 @@
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import SubmissionCard from "@/app/components/dashboard/box/SubmissionCard";
 import styles from "./page.module.css";
 
 export default function BoxPage({ params }) {
@@ -92,18 +93,16 @@ export default function BoxPage({ params }) {
           ? (
               <div className={styles.submissions}>
                 <h2>Submissions</h2>
-                <ul>
+                <ul className={styles.submissions__list}>
                   {submissions.map(submission => (
-                    <li key={submission.id} className={styles.submission}>
-                      <p>{submission.message}</p>
-                    </li>
+                    <SubmissionCard key={submission.id} className={styles.submission} message={submission.message} />
                   ))}
                 </ul>
               </div>
             )
           : (
               session?.user?.id && (
-                <div className={styles.noSubmissions}>
+                <div className={styles.no__submissions}>
                   <p className={styles.message__p}>No submissions found for this box.</p>
                 </div>
               )
