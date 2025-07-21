@@ -15,12 +15,13 @@
 }
 
 .response__form {
-  margin-top: 1em;
   display: flex;
   flex-direction: column;
+  gap: 1em;
+  margin-top: 1.5em;
 }
 
-.respond__button {
+.button {
   background-color: #eee;
   border: none;
   padding: 0.4rem 0.8rem;
