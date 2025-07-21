@@ -1,14 +1,47 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+// Run this command to generate base config and vs code settings:
+// pnpm dlx @antfu/eslint-config@latest
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import antfu from "@antfu/eslint-config";
+import nextPlugin from "@next/eslint-plugin-next";
 
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
+export default antfu({
+  type: "app",
+  react: true,
+
+  // Can enable/disable formatters with e.g. { css: true, html: false }
+  formatters: true,
+
+  // ESLint Stylistic rules
+  stylistic: {
+    indent: 2,
+    semi: true,
+    quotes: "double",
+  },
+
+  // Files to ignore when linting
+  ignores: [
+    "plan.md",
+    // ".pnpm-store/*"
+  ],
+}, {
+  // Plugins to include for linting process
+  plugins: {
+    "@next/next": nextPlugin,
+  },
+
+  // Extension of default config rules
+  rules: {
+    ...nextPlugin.configs.recommended.rules,
+    ...nextPlugin.configs["core-web-vitals"].rules,
+    "style/jsx-pascal-case": ["error"],
+    "no-console": ["warn"],
+    "antfu/no-top-level-await": ["off"],
+    "node/prefer-global/process": ["off"],
+    "node/no-process-env": ["error"],
+    "react/prefer-destructuring-assignment": "off",
+    // "unicorn/filename-case": ["error", {
+    //   case: "pascalCase",
+    //   ignore: ["README.md", "plan.md"],
+    // }],
+  },
 });
-
-const eslintConfig = [...compat.extends("next/core-web-vitals")];
-
-export default eslintConfig;

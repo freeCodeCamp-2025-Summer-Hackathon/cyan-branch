@@ -1,30 +1,44 @@
-'use client';
-import { useSession, signIn } from 'next-auth/react';
-import { useEffect } from 'react';
+"use client";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import CreateBoxForm from "../components/dashboard/CreateBoxForm";
+import DisplayOwnedBoxes from "../components/dashboard/DisplayOwnedBoxes";
+import styles from "./page.module.css";
 
 export default function AdminDashboard() {
   const { data: session, status } = useSession();
+  const router = useRouter();
 
   useEffect(() => {
-    if (status === 'unauthenticated') {
-      // Prevent unregistered users from accessing admin dashboard
-      signIn('google', { callbackUrl: '/dashboard' });
+    if (status === "unauthenticated") {
+      // Redirect unauthenticated users to homepage, should probably redirect to a
+      // login/signup page in the future
+      router.push("/");
     }
-  }, [status]);
+  }, [status, router]);
 
-  if (status === 'loading') {
-    return <p>Loading...</p>
+  if (status === "loading") {
+    return (
+      <p className={`${styles.loading__p} ${styles.loading__dots}`}>Loading</p>
+    );
   }
 
-  if (status === 'authenticated') {
+  if (status === "authenticated") {
     return (
-      <main>
-        <h1>Admin Dashboard</h1>
-        <h2>Welcome {session?.user?.name ?? 'Unknown User'}</h2>
+      <main className={styles.main}>
+        <h1 className={styles.title}>
+          Hi,&nbsp;
+          {session?.user?.name ?? "Guest"}
+          .
+        </h1>
+        <div className={styles.content__container}>
+          <CreateBoxForm />
+          <DisplayOwnedBoxes session={session} status={status} />
+        </div>
       </main>
     );
   }
-  
-  // Fallback, can probably be improved to something in the future
+
   return null;
 }
