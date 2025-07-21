@@ -2,8 +2,12 @@
   --TEXT-COLOR: hsl(0, 0%, 9%);
   --BACKGROUNG-COLOR: hsl(0, 10%, 85%);
   --PRIMARY-COLOR: hsl(0, 7%, 30%);
+  --CONSTANT-COLOR: hsl(0, 0%, 100%);
   --site-theme: hsl(0, 7%, 30%);
   --gray-text: hsl(0, 0%, 20%);
+
+  /* ? HEADER SECTION (LIGHT) */
+  --HEADER-BORDER-COLOR: hsl(0, 6%, 94%);
 
   /* ? DIVIDER */
   --DIVIDER: hsl(0, 7%, 30%);
@@ -12,11 +16,11 @@
   --HERO-LINEAR-GRADIENT: linear-gradient(hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.6));
   --HERO-BORDER-COLOR: hsl(0, 6%, 94%);
   --HERO-BTN-BG-COLOR: hsl(0, 0%, 100%);
+  --HERO-BTN-BG-COLOR-HOVER: hsl(0, 0%, 90%);
   --HERO-BTN-SHADOW-COLOR: hsl(0, 2%, 80%);
 
   /* ? DESCRIPTION SECTION (LIGHT) */
   --DESCRIPTION-BG-COLOR: hsl(0, 0%, 96%);
-  --DESCRIPTION-NUMBER: hsl(0, 0%, 100%);
 
 }
 
@@ -25,6 +29,9 @@
   --BACKGROUND-COLOR: hsl(0, 0%, 4%);
   --gray-text: hsl(0, 0%, 84%);
 
+  /* ? HEADER SECTION (DARK) */
+  --HEADER-BORDER-COLOR: hsl(0, 0%, 55%);
+
   /* ? DIVIDER */
   --DIVIDER: hsl(0, 0%, 100%);
 
@@ -32,6 +39,7 @@
   --HERO-LINEAR-GRADIENT: linear-gradient(hsla(0, 0%, 20%, 0.6), hsla(0, 0%, 20%, 0.6));
   --HERO-BORDER-COLOR: hsl(0, 0%, 55%);
   --HERO-BTN-BG-COLOR: hsl(0, 0%, 0%);
+  --HERO-BTN-BG-COLOR-HOVER: hsl(0, 0%, 20%);
   --HERO-BTN-SHADOW-COLOR: hsl(0, 100%, 3%);
 
   /* ? DESCRIPTION SECTION (DARK) */

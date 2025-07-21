@@ -4,12 +4,13 @@
   justify-content: flex-start;
   align-items: center;
   padding-bottom: 6em;
-  margin-top: 2em;
+  margin-top: 5.5em;
   border: 2px solid var(--HERO-BORDER-COLOR);
   background: var(--HERO-LINEAR-GRADIENT), url("/images/pexels-divinetechygirl-1181717.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .hero__wrapper {
@@ -38,5 +39,12 @@
   border-radius: 5px;
   filter: drop-shadow(2px 2px 4px var(--HERO-BTN-SHADOW-COLOR));
   font-weight: 600;
+  transition: background 300ms ease-in-out;
+  cursor: pointer;
+  border: none;
+}
+
+.hero__link:hover{
+  background-color: var(--HERO-BTN-BG-COLOR-HOVER);
 }
 

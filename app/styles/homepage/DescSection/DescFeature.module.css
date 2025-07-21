@@ -13,7 +13,7 @@
   background-color: var(--PRIMARY-COLOR);
   padding: 0.5em;
   font-weight: 600;
-  color: var(--DESCRIPTION-NUMBER);
+  color: var(--CONSTANT-COLOR);
   border-radius: 10px 0 10px 0;
 }
 
