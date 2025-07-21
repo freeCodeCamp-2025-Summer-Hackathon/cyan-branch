@@ -11,12 +11,10 @@ export async function POST(request) {
       return NextResponse.json({ error: "boxId and message are required" }, { status: 400 });
     }
 
-    const submission = await createSubmission(boxId, { message });
+    await createSubmission(boxId, { message });
 
-    return NextResponse.json({
-      message: "Submission created successfully",
-      data: submission,
-    }, { status: 201 });
+    // Redirect to thank you page
+    return Response.redirect(new URL(`/submit/${boxId}/thanks`, request.url));
   }
   catch (error) {
     console.error("API submission POST error:", error);
