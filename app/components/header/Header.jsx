@@ -9,6 +9,8 @@ function Header() {
   // Retrieve the current theme, i.e. dark vs. light mode
   const { resolvedTheme, setTheme } = useTheme();
 
+  console.log(resolvedTheme);
+
   return (
     <header className={styles.header}>
       <div className={styles.header__logo}>
