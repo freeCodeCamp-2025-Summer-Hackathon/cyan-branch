@@ -44,6 +44,6 @@
   border: none;
 }
 
-.hero__link:hover{
+.hero__link:hover {
   background-color: var(--HERO-BTN-BG-COLOR-HOVER);
 }
