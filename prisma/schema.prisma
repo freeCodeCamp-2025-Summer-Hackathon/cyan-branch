@@ -31,6 +31,7 @@ model Box {
   // Relations
   admin       User         @relation(fields: [adminId], references: [id])
   submissions Submission[]
+  link Link[]
 }
 
 model Submission {
@@ -79,4 +80,16 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model Link {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  boxId       String   @db.ObjectId
+  token       String   @unique
+  expiresAt   DateTime
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+
+  // Relations
+  box Box @relation(fields: [boxId], references: [id])
 }
