@@ -1,15 +1,22 @@
 import Link from "next/link";
+import {
+  FaDiscord,
+  FaGithub,
+  FaLinkedin,
+  FaTiktok,
+  FaXTwitter,
+  FaYoutube
+} from 'react-icons/fa6';
 
-import { FaFacebook, FaInstagram, FaYoutube, FaXTwitter, FaTiktok, FaDiscord, FaLinkedin, FaGithub } from "react-icons/fa6";
-
-const SocialIcons = ({ iconName, link }) => {
+function SocialIcon ({ iconName, link }){
   if (iconName === "facebook") {
     return (
       <Link href={link}>
         <FaFacebook />
       </Link>
     );
-  } else if (iconName === "instagram") {
+  } 
+  else if (iconName === "instagram") {
     return (
       <Link href={link}>
         <FaInstagram />
@@ -21,31 +28,36 @@ const SocialIcons = ({ iconName, link }) => {
         <FaYoutube />
       </Link>
     );
-  } else if (iconName === "twitter") {
+  } 
+  else if (iconName === "twitter") {
     return (
       <Link href={link}>
         <FaXTwitter />
       </Link>
     );
-  } else if (iconName === "tiktok") {
+  } 
+  else if (iconName === "tiktok") {
     return (
       <Link href={link}>
         <FaTiktok />
       </Link>
     );
-  } else if (iconName === "discord") {
+  } 
+  else if (iconName === "discord") {
     return (
       <Link href={link}>
         <FaDiscord />
       </Link>
     );
-  } else if (iconName === "linkedin") {
+  } 
+  else if (iconName === "linkedin") {
     return (
       <Link href={link}>
         <FaLinkedin />
       </Link>
     );
-  } else if (iconName === "github") {
+  } 
+  else if (iconName === "github") {
     return (
       <Link href={link}>
         <FaGithub />
@@ -54,4 +66,4 @@ const SocialIcons = ({ iconName, link }) => {
   }
 };
 
-export default SocialIcons;
+export default SocialIcon;
