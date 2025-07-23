@@ -86,7 +86,6 @@ model Link {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
   boxId       String   @db.ObjectId
   token       String   @unique
-  expiresAt   DateTime
   isActive    Boolean  @default(true)
   createdAt   DateTime @default(now())
 

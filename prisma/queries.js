@@ -8,6 +8,9 @@ export async function getBoxes(adminId) {
       where: {
         adminId,
       },
+      include: {
+        link: true,
+      },
       orderBy: {
         createdAt: "desc",
       },

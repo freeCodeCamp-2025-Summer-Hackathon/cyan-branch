@@ -9,20 +9,17 @@ export async function middleware(req) {
     const token = pathname.slice(7); // Remove '/voice-' prefix
 
     if (token && token.length > 0) {
-      // Rewrite to the dynamic route handler
-      await fetch(`${req.nextUrl.origin}/api/voicebox/${token}`);
+      // Rewrite to the API route
+      url.pathname = `/api/voicebox/${token}`;
+      return NextResponse.rewrite(url);
     }
   }
 
-  // Let everything else pass through normally
   return NextResponse.next();
 }
 
 export const config = {
   matcher: [
-    // Match voice token URLs - try a more specific pattern
     "/voice-:path*",
-    // Alternative: catch all and filter in the function
-    // "/((?!api|_next/static|_next/image|favicon.ico).*)",
   ],
 };

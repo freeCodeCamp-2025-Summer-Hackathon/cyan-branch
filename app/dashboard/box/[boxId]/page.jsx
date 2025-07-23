@@ -3,7 +3,7 @@
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import LinkManager from "@/app/components/LinkManager";
+import LinkManager from "@/app/components/dashboard/LinkManager";
 import styles from "./page.module.css";
 
 export default function BoxPage({ params }) {
