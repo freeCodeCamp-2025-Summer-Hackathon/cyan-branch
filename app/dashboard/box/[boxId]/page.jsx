@@ -3,8 +3,8 @@
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import LinkManager from "@/app/components/dashboard/LinkManager";
 import SubmissionCard from "@/app/components/dashboard/box/SubmissionCard";
+import LinkManager from "@/app/components/dashboard/LinkManager";
 import styles from "./page.module.css";
 
 export default function BoxPage({ params }) {
