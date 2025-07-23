@@ -81,13 +81,16 @@ adminId = "longAdminIdString";
 │   ├── api/                # API routes
 │   │   ├── auth/           # User authentication with Google OAuth and NextAuth
 │   │   ├── boxes/          # Endpoints to create and retrieve anonymous suggestion boxes
-│   │   └── submissions/    # Endpoints to submit and retrieve anonymous submissions for each box
+│   │   ├── submissions/    # Endpoints to submit and retrieve anonymous submissions for each box
+│   │   ├── voicebox/       # Endpoints to validate and redirect to the appropriate page
+│   │   └── links/          # Endpoints to retrieve generated links
 │   ├── dashboard/          # Admin dashboard for managing boxes and viewing submissions
 │   ├── submit/             # Public-facing page for submitting anonymous suggestions to a box
 │   ├── components/         # Reusable React components
 │   └── styles/             # Global and module CSS for styling the app
 ├── lib/                    # Shared libraries and utilities
 ├── prisma/                 # Prisma schema and queries
+├── utils/                  # Utilities and helpers for the project
 ├── public/                 # Static assets
 └── README.md               # Documentation for local setup
 ```

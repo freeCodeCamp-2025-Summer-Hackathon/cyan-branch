@@ -4,24 +4,27 @@ import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import SubmissionCard from "@/app/components/dashboard/box/SubmissionCard";
+import LinkManager from "@/app/components/dashboard/LinkManager";
 import styles from "./page.module.css";
 
 export default function BoxPage({ params }) {
   const { data: session, status } = useSession();
   const [box, setBox] = useState(null);
   const [submissions, setSubmissions] = useState([]);
+  const [links, setLinks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [dropdownOpenId, setDropdownOpenId] = useState(null);
 
   useEffect(() => {
-    async function fetchSubmissions() {
+    async function fetchData() {
       try {
         setLoading(true);
         setError(null);
 
         const { boxId } = await params;
 
+        // Fetch box data
         const boxRes = await fetch(`/api/boxes/${boxId}`);
         if (!boxRes.ok) {
           throw new Error(`Failed to fetch box: ${boxRes.status}`);
@@ -31,10 +34,18 @@ export default function BoxPage({ params }) {
         setBox(boxData);
 
         if (session?.user?.id) {
+          // Fetch submissions
           const submissionsRes = await fetch(`/api/submissions/${boxId}`);
           if (submissionsRes.ok) {
             const submissionsData = await submissionsRes.json();
             setSubmissions(submissionsData);
+          }
+
+          // Fetch links for this box
+          const linksRes = await fetch(`/api/links/${boxId}`);
+          if (linksRes.ok) {
+            const linksData = await linksRes.json();
+            setLinks(linksData);
           }
         }
       }
@@ -47,7 +58,7 @@ export default function BoxPage({ params }) {
     }
 
     if (status !== "loading")
-      fetchSubmissions();
+      fetchData();
   }, [params, session?.user?.id, status]);
 
   // Used to toggle view response text area on submission card component (SubmissionCard.jsx)
@@ -98,6 +109,12 @@ export default function BoxPage({ params }) {
         <h1 className={styles.title}>{box.name}</h1>
         <p className={styles.description}>{box.description}</p>
 
+        {/* Link Management Section */}
+        {session?.user?.id && (
+          <LinkManager boxId={box.id} links={links} />
+        )}
+
+        {/* Submissions Section */}
         {submissions.length > 0
           ? (
               <div className={styles.submissions}>
