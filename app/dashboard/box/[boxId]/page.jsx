@@ -4,6 +4,7 @@ import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import LinkManager from "@/app/components/dashboard/LinkManager";
+import SubmissionCard from "@/app/components/dashboard/box/SubmissionCard";
 import styles from "./page.module.css";
 
 export default function BoxPage({ params }) {
@@ -13,6 +14,7 @@ export default function BoxPage({ params }) {
   const [links, setLinks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [dropdownOpenId, setDropdownOpenId] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
@@ -58,6 +60,14 @@ export default function BoxPage({ params }) {
     if (status !== "loading")
       fetchData();
   }, [params, session?.user?.id, status]);
+
+  // Used to toggle view response text area on submission card component (SubmissionCard.jsx)
+  function toggleDropdown(id) {
+    setDropdownOpenId((prevId) => {
+      const newId = prevId === id ? null : id;
+      return newId;
+    });
+  }
 
   if (loading || status === "loading") {
     return (
@@ -109,18 +119,22 @@ export default function BoxPage({ params }) {
           ? (
               <div className={styles.submissions}>
                 <h2>Submissions</h2>
-                <ul>
+                <ul className={styles.submissions__list}>
                   {submissions.map(submission => (
-                    <li key={submission.id} className={styles.submission}>
-                      <p>{submission.message}</p>
-                    </li>
+                    <SubmissionCard
+                      className={styles.submission}
+                      key={submission.id}
+                      submission={submission}
+                      toggleDropdown={toggleDropdown}
+                      dropdownOpenId={dropdownOpenId}
+                    />
                   ))}
                 </ul>
               </div>
             )
           : (
               session?.user?.id && (
-                <div className={styles.noSubmissions}>
+                <div className={styles.no__submissions}>
                   <p className={styles.message__p}>No submissions found for this box.</p>
                 </div>
               )

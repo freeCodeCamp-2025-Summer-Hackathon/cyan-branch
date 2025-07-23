@@ -57,6 +57,15 @@
   outline: none;
 }
 
+.message__p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
 @media only screen and (min-width: 768px) {
   /* Desktop mode */
   .create__box__container,

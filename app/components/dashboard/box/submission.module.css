@@ -1,0 +1,50 @@
+.card__container {
+  background-color: var(--site-theme);
+  border-radius: 0.4rem;
+  transition: background-color 0.2s ease;
+  padding: 1.2rem;
+  color: white;
+  list-style: none;
+}
+
+.card__content {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  align-items: center;
+}
+
+.response__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: 1.5em;
+}
+
+.button {
+  background-color: #eee;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #333;
+  transition: background-color 0.2s;
+}
+
+.textarea {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #111;
+  transition: border-color 0.2s ease;
+  font-family: Arial, Helvetica, sans-serif;
+  resize: none;
+}
+
+.textarea:focus {
+  border-color: black;
+  outline: none;
+}
