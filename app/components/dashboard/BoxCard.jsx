@@ -26,7 +26,7 @@ export default function BoxCard({ boxId, name, description, linkToken }) {
           <p className={styles.card__text}>{description}</p>
         </div>
       </Link>
-      <button type="button"onClick={handleCopyLink} className={styles.copy__button}>
+      <button type="button" onClick={handleCopyLink} className={styles.copy__button}>
         {copied ? "Copied!" : "Copy Link"}
       </button>
     </div>

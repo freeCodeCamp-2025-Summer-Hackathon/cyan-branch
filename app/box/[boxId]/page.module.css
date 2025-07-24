@@ -1,0 +1,25 @@
+.display__boxes__container {
+  max-width: 500px;
+  width: 100%;
+}
+
+.message_p {
+  font-size: 0.95rem;
+}
+
+.card__text__container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+
+.card__text {
+  display: -webkit-box;
+  color: white;
+  overflow: hidden;
+  max-width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  text-overflow: ellipsis;
+}
