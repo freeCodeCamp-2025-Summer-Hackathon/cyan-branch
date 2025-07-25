@@ -1,4 +1,3 @@
-import Link from "next/link";
 import styles from "../../styles/homepage/HeroSection.module.css";
 
 function HeroSection() {
@@ -9,9 +8,9 @@ function HeroSection() {
         <p className={styles.hero__body}>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit.
         </p>
-        <Link href="#" className={styles.hero__link}>
+        <button type="button" className={styles.hero__link}>
           submit anonymously
-        </Link>
+        </button>
       </div>
     </section>
   );

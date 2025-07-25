@@ -4,9 +4,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: hsl(0, 7%, 30%);
-  color: #fff;
-  border-bottom: 2px solid #f0eeee;
+  position: fixed;
+  background-color: var(--PRIMARY-COLOR);
+  box-shadow: 2px 2px 4px #333;
+  color: var(--CONSTANT-COLOR);
+  border-bottom: 2px solid var(--HEADER-BORDER-COLOR);
+  z-index: 1;
 }
 
 .header__logo {
@@ -55,12 +58,6 @@
 }
 
 /*! Media Query */
-
-@media (prefers-color-scheme: dark) {
-  .header {
-    border-bottom: 2px solid #8b8b8b;
-  }
-}
 
 @media only screen and (min-width: 768px) {
   /* Desktop mode */
