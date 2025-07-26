@@ -61,6 +61,7 @@ export default function BoxPage({ params }) {
       <div className={styles.box__container}>
         <h1 className={styles.title}>{box.name}</h1>
         <p className={styles.description}>{box.description}</p>
+        <Link className={styles.dashboard__link} href={`/box/${box.id}`}>Go to Public Response Page</Link>
 
         {/* Link Management Section */}
         {session?.user?.id && (

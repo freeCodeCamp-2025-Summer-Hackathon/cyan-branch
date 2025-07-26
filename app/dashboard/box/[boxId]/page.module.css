@@ -33,6 +33,9 @@
   border-radius: 0.4rem;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  text-align: center;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .message__p {
