@@ -1,25 +1,45 @@
-.display__boxes__container {
-  max-width: 500px;
-  width: 100%;
+.main {
+  margin: 0 1rem;
+  padding-top: 2rem;
 }
 
-.message_p {
-  font-size: 0.95rem;
-}
-
-.card__text__container {
+.box__container {
   display: flex;
   flex-direction: column;
-  gap: 0.4em;
+  gap: 1em;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  padding-bottom: 1rem;
 }
 
-.card__text {
-  display: -webkit-box;
-  color: white;
-  overflow: hidden;
-  max-width: 100%;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  text-overflow: ellipsis;
+.title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: var(--font-corben);
+}
+
+.description {
+  text-align: center;
+  font-style: italic;
+}
+
+.submissions__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-top: 0.5em;
+}
+
+.message__p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.loading__dots::after {
+  content: "...";
+  animation: dots 1s steps(3, end) infinite;
 }

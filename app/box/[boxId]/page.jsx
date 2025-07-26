@@ -1,65 +1,72 @@
 "use client";
 
-import useFetchBox from "@/app/_utils/useFetchBox";
-import useFetchSubmissions from "@/app/_utils/useFetchSubmissions";
+import PublicCard from "@/app/components/box/PublicCard";
+import { useFetchSubmissions } from "@/app/hooks/useFetchSubmissions";
 import styles from "./page.module.css";
 
-export default function PublicDashboard({ status, boxId }) {
-  const { box, loading: boxLoading, error: boxError } = useFetchBox(status, boxId);
-  const { submissions, loading: subsLoading, error: subsError } = useFetchSubmissions(status, boxId);
+export default function PublicBoxPage({ params }) {
+  const { box, submissions, loading, error } = useFetchSubmissions(params);
 
-  if (boxLoading || subsLoading || status === "loading") {
+  if (loading) {
     return (
-      <div className={styles.display__boxes__container}>
-        <p className={styles.message__p}>Loading box and submissions...</p>
-      </div>
+      <main className={styles.main}>
+        <div className={styles.box__container}>
+          <p className={`${styles.message__p} ${styles.loading__dots}`}>Loading</p>
+        </div>
+      </main>
     );
-  };
+  }
 
-  if (boxError) {
+  if (error) {
     return (
-      <div className={styles.display__boxes__container}>
-        <p className={styles.message__p}>
-          Error loading box:
-          {boxError}
-        </p>
-      </div>
+      <main className={styles.main}>
+        <div className={styles.box__container}>
+          <p className={styles.message__p}>
+            Error:
+            {" "}
+            {error}
+          </p>
+        </div>
+      </main>
     );
-  };
-
-  if (subsError) {
-    return (
-      <div className={styles.display__boxes__container}>
-        <p className={styles.message__p}>
-          Error loading submissions:
-          {subsError}
-        </p>
-      </div>
-    );
-  };
+  }
 
   if (!box) {
     return (
-      <div className={styles.display__boxes__container}>
-        <h2>{box.name}</h2>
-        <p className={styles.message__p}>This box doesn't exist.</p>
-      </div>
+      <main className={styles.main}>
+        <div className={styles.box__container}>
+          <p className={styles.message__p}>Box not found</p>
+        </div>
+      </main>
     );
-  };
-
-  if (!submissions) {
-    return (
-      <div className={styles.display__boxes__container}>
-        <h2>{box.name}</h2>
-        <p className={styles.message__p}>This box doesn't have any submissions yet.</p>
-      </div>
-    );
-  };
+  }
 
   return (
-    <div className={styles.card__text__container}>
-      <h2 className={styles.card__text}>{box.name}</h2>
-      <p className={styles.card__text}>{box.description}</p>
-    </div>
+    <main className={styles.main}>
+      <div className={styles.box__container}>
+        <h1 className={styles.title}>{box.name}</h1>
+        <p className={styles.description}>{box.description}</p>
+
+        {submissions.length > 0
+          ? (
+              <div className={styles.submissions}>
+                <h2>Submissions</h2>
+                <ul className={styles.submissions__list}>
+                  {submissions.map(submission => (
+                    <PublicCard
+                      key={submission.id}
+                      submission={submission}
+                    />
+                  ))}
+                </ul>
+              </div>
+            )
+          : (
+              <div className={styles.submissions}>
+                <p className={styles.message__p}>No submissions found for this box.</p>
+              </div>
+            )}
+      </div>
+    </main>
   );
-};
+}

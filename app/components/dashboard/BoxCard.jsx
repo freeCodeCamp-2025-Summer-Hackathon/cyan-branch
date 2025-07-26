@@ -6,7 +6,6 @@ export default function BoxCard({ boxId, name, description, linkToken }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopyLink = async () => {
-    // const shareableLink = `${window.location.origin}/submit/${boxId}`;
     const shareableLink = `${window.location.origin}/voice-${linkToken}`;
     try {
       await navigator.clipboard.writeText(shareableLink);

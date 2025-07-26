@@ -2,64 +2,16 @@
 
 import { useSession } from "next-auth/react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SubmissionCard from "@/app/components/dashboard/box/SubmissionCard";
 import LinkManager from "@/app/components/dashboard/LinkManager";
+import { useFetchBox } from "@/app/hooks/useFetchBox";
 import styles from "./page.module.css";
 
 export default function BoxPage({ params }) {
   const { data: session, status } = useSession();
-  const [box, setBox] = useState(null);
-  const [submissions, setSubmissions] = useState([]);
-  const [links, setLinks] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const { box, submissions, links, loading, error } = useFetchBox(params, session, status);
   const [dropdownOpenId, setDropdownOpenId] = useState(null);
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        setLoading(true);
-        setError(null);
-
-        const { boxId } = await params;
-
-        // Fetch box data
-        const boxRes = await fetch(`/api/boxes/${boxId}`);
-        if (!boxRes.ok) {
-          throw new Error(`Failed to fetch box: ${boxRes.status}`);
-        }
-
-        const boxData = await boxRes.json();
-        setBox(boxData);
-
-        if (session?.user?.id) {
-          // Fetch submissions
-          const submissionsRes = await fetch(`/api/submissions/${boxId}`);
-          if (submissionsRes.ok) {
-            const submissionsData = await submissionsRes.json();
-            setSubmissions(submissionsData);
-          }
-
-          // Fetch links for this box
-          const linksRes = await fetch(`/api/links/${boxId}`);
-          if (linksRes.ok) {
-            const linksData = await linksRes.json();
-            setLinks(linksData);
-          }
-        }
-      }
-      catch (error) {
-        setError(error.message);
-      }
-      finally {
-        setLoading(false);
-      }
-    }
-
-    if (status !== "loading")
-      fetchData();
-  }, [params, session?.user?.id, status]);
 
   // Used to toggle view response text area on submission card component (SubmissionCard.jsx)
   function toggleDropdown(id) {
@@ -85,6 +37,7 @@ export default function BoxPage({ params }) {
         <div className={styles.box__container}>
           <p className={styles.message__p}>
             Error:
+            {" "}
             {error}
           </p>
         </div>
@@ -108,6 +61,7 @@ export default function BoxPage({ params }) {
       <div className={styles.box__container}>
         <h1 className={styles.title}>{box.name}</h1>
         <p className={styles.description}>{box.description}</p>
+        <Link className={styles.dashboard__link} href={`/box/${box.id}`}>Go to Public Response Page</Link>
 
         {/* Link Management Section */}
         {session?.user?.id && (
