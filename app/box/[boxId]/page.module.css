@@ -31,11 +31,10 @@
   margin-top: 0.5em;
 }
 
-.loading__p {
+.message__p {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   font-size: 1.2rem;
   font-weight: 500;
 }

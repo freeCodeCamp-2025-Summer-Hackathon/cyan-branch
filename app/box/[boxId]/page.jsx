@@ -62,7 +62,7 @@ export default function PublicBoxPage({ params }) {
               </div>
             )
           : (
-              <div className={styles.no__submissions}>
+              <div className={styles.submissions}>
                 <p className={styles.message__p}>No submissions found for this box.</p>
               </div>
             )}
