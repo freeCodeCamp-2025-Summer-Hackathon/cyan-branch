@@ -1,6 +1,4 @@
-.footer__socials__icon {
-  width: 40px;
-  height: 40px;
+.socials__icon {
   border-radius: 50%;
-  background-color: white;
+  font-size: 2em;
 }

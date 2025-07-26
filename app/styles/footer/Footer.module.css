@@ -9,3 +9,7 @@
   width: 50%;
   margin-left: auto;
 }
+
+.footer__socials__icon {
+  display: none;
+}

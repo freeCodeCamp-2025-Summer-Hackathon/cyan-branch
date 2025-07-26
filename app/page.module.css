@@ -3,7 +3,7 @@
 .divider {
   width: 90%;
   height: 3px;
-  background-color: #fff;
+  background-color: var(--DIVIDER);
   border: 0;
   margin: 0 auto;
   margin-top: 1.7em;
