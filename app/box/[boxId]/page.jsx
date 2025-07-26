@@ -51,10 +51,9 @@ export default function PublicBoxPage({ params }) {
           ? (
               <div className={styles.submissions}>
                 <h2>Submissions</h2>
-                <ul>
+                <ul className={styles.submissions__list}>
                   {submissions.map(submission => (
                     <PublicCard
-                      className={styles.submission}
                       key={submission.id}
                       submission={submission}
                     />

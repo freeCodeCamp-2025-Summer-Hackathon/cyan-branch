@@ -1,5 +1,6 @@
 .main {
   margin: 0 1rem;
+  padding-top: 2rem;
 }
 
 .box__container {
@@ -8,8 +9,26 @@
   gap: 1em;
   max-width: 500px;
   margin: 0 auto;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   padding-bottom: 1rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: var(--font-corben);
+}
+
+.description {
+  text-align: center;
+  font-style: italic;
+}
+
+.submissions__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-top: 0.5em;
 }
 
 .loading__p {
