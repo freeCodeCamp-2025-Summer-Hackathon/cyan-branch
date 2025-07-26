@@ -1,25 +1,27 @@
-.display__boxes__container {
-  max-width: 500px;
-  width: 100%;
+.main {
+  margin: 0 1rem;
 }
 
-.message_p {
-  font-size: 0.95rem;
-}
-
-.card__text__container {
+.box__container {
   display: flex;
   flex-direction: column;
-  gap: 0.4em;
+  gap: 1em;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 3rem;
+  padding-bottom: 1rem;
 }
 
-.card__text {
-  display: -webkit-box;
-  color: white;
-  overflow: hidden;
-  max-width: 100%;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  text-overflow: ellipsis;
+.loading__p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.loading__dots::after {
+  content: "...";
+  animation: dots 1s steps(3, end) infinite;
 }
