@@ -1,3 +1,7 @@
+"use client";
+
+import { signIn } from "next-auth/react";
+import GoogleButton from "react-google-button";
 import styles from "../../styles/homepage/HeroSection.module.css";
 
 function HeroSection() {
@@ -8,9 +12,7 @@ function HeroSection() {
         <p className={styles.hero__body}>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit.
         </p>
-        <button type="button" className={styles.hero__link}>
-          submit anonymously
-        </button>
+        <GoogleButton type="button" onClick={() => signIn("google", { callbackUrl: "/dashboard" })} />
       </div>
     </section>
   );
