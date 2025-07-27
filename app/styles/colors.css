@@ -29,13 +29,13 @@
 }
 
 [data-theme="dark"] {
-  --TEXT-COLOR: hsl(243, 76%, 95%);
+  --TEXT-COLOR: hsl(245, 37%, 93%);
   --BACKGROUND-COLOR: hsl(240, 23%, 11%);
   --gray-text: hsl(0, 0%, 84%);
 
   /* ? HEADER SECTION (DARK) */
-  --HEADER-BORDER-COLOR: hsl(240, 20%, 45%);
-  --HEADER-BG-COLOR: hsl(240, 20%, 45%);
+  --HEADER-BORDER-COLOR: hsl(0, 1%, 28%);
+  --HEADER-BG-COLOR: hsl(243, 79%, 61%);
   --HEADER-TEXT: hsl(243, 76%, 95%);
 
   /* ? DIVIDER */
