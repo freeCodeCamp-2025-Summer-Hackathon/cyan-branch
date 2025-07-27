@@ -10,9 +10,9 @@ function HeroSection() {
       <div className={styles.hero__wrapper}>
         <h2 className={styles.hero__title}>Have your say</h2>
         <p className={styles.hero__body}>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          Get started by signing in with Google to create and manage anonymous suggestion boxes.
         </p>
-        <GoogleButton type="button" onClick={() => signIn("google", { callbackUrl: "/dashboard" })} />
+        <GoogleButton className={styles.google__button} type="dark" onClick={() => signIn("google", { callbackUrl: "/dashboard" })} />
       </div>
     </section>
   );

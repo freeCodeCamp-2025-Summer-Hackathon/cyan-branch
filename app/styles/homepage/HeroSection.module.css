@@ -24,13 +24,15 @@
 
 .hero__title {
   text-transform: capitalize;
-  font-size: 2.5rem;
-  padding: 0.8em 0;
+  font-size: 2rem;
+  padding-top: 0.8em;
+  font-family: var(--font-corben), serif;
   /* transform: scale(1.2); */
 }
 
 .hero__body {
   line-height: 1.8;
+  font-weight: 500;
 }
 
 .hero__link {
