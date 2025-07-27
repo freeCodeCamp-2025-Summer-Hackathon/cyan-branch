@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-function useFetchSubmissions(status, id) {
+export function useFetchSubmissions(params) {
+  const [box, setBox] = useState(null);
   const [submissions, setSubmissions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -11,13 +12,21 @@ function useFetchSubmissions(status, id) {
         setLoading(true);
         setError(null);
 
-        const boxRes = await fetch(`/api/submissions/${id}`);
+        const { boxId } = await params;
+
+        const boxRes = await fetch(`/api/boxes/${boxId}`);
         if (!boxRes.ok) {
           throw new Error(`Failed to fetch box: ${boxRes.status}`);
         }
-
         const boxData = await boxRes.json();
-        setSubmissions(boxData);
+        setBox(boxData);
+
+        const submissionRes = await fetch(`/api/submissions/${boxId}`);
+        if (!submissionRes.ok) {
+          throw new Error(`Failed to fetch submissions: ${submissionRes.status}`);
+        }
+        const submissionData = await submissionRes.json();
+        setSubmissions(submissionData);
       }
       catch (error) {
         setError(error.message);
@@ -27,12 +36,8 @@ function useFetchSubmissions(status, id) {
       }
     }
 
-    if (status !== "loading") {
-      fetchSubmissions();
-    }
-  }, [id, status]);
+    fetchSubmissions();
+  }, [params]);
 
-  return { submissions, loading, error };
+  return { box, submissions, loading, error };
 }
-
-export default useFetchSubmissions;

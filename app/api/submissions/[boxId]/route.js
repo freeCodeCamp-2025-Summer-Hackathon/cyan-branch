@@ -1,15 +1,15 @@
-import { getServerSession } from "next-auth";
+// import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
-import { authOptions } from "@/lib/authOptions";
+// import { authOptions } from "@/lib/authOptions";
 import prisma from "@/lib/prisma";
 
 export async function GET(request, { params }) {
   try {
-    const session = await getServerSession(authOptions);
+    // const session = await getServerSession(authOptions);
 
-    if (!session || !session.user) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
+    // if (!session || !session.user) {
+    //   return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    // }
 
     const { boxId } = await params;
     const box = await prisma.box.findUnique({
@@ -17,7 +17,7 @@ export async function GET(request, { params }) {
       include: { admin: true },
     });
 
-    if (!box || box.adminId !== session.user.id) {
+    if (!box) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
 

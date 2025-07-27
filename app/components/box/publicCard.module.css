@@ -1,0 +1,15 @@
+.card__container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  background-color: var(--site-theme);
+  border-radius: 0.4rem;
+  transition: background-color 0.2s ease;
+  padding: 1.2rem;
+  color: white;
+  list-style: none;
+}
+
+.response {
+  font-style: italic;
+}
