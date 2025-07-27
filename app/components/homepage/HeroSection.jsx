@@ -1,3 +1,7 @@
+"use client";
+
+import { signIn } from "next-auth/react";
+import GoogleButton from "react-google-button";
 import styles from "../../styles/homepage/HeroSection.module.css";
 
 function HeroSection() {
@@ -6,11 +10,9 @@ function HeroSection() {
       <div className={styles.hero__wrapper}>
         <h2 className={styles.hero__title}>Have your say</h2>
         <p className={styles.hero__body}>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          Get started by signing in with Google to create and manage anonymous suggestion boxes.
         </p>
-        <button type="button" className={styles.hero__link}>
-          submit anonymously
-        </button>
+        <GoogleButton className={styles.google__button} type="dark" onClick={() => signIn("google", { callbackUrl: "/dashboard" })} />
       </div>
     </section>
   );

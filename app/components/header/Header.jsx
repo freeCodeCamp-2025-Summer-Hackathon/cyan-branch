@@ -23,11 +23,6 @@ function Header() {
             setTheme={setTheme}
           />
           <li className={styles.header__navigation__listItem}>
-            <Link href="#" className={styles.header__navigation__listItem__link}>
-              Submit
-            </Link>
-          </li>
-          <li className={styles.header__navigation__listItem}>
             <HeaderDropdown />
           </li>
         </ul>
