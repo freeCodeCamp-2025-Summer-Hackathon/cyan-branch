@@ -53,7 +53,7 @@
 }
 
 .dashboard__link:hover {
-  background-color: hsl(0, 7%, 38%);
+  background-color: var(--BTN-HOVER);
 }
 
 .submissions__list {

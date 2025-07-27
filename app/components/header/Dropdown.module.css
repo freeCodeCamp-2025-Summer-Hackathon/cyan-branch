@@ -40,7 +40,7 @@
 }
 
 .dropdown__item:hover {
-  background-color: #f5f5f5;
+  background-color: var(--HEADER-BG-COLOR);
   border-radius: 2px;
 }
 

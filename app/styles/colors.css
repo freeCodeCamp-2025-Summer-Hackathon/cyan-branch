@@ -1,13 +1,15 @@
 :root {
   --TEXT-COLOR: hsl(246, 76%, 5%);
   --BACKGROUND-COLOR: hsl(240, 60%, 99%);
-  --PRIMARY-COLOR: hsl(243, 68, 48%);
+  --PRIMARY-COLOR: hsl(243, 79%, 61%);
   --CONSTANT-COLOR: hsl(243, 100%, 93%);
-  --site-theme: hsl(242, 100%, 62%);
+  --site-theme: hsl(243, 79%, 61%);
   --gray-text: hsl(0, 0%, 20%);
 
   /* ? HEADER SECTION (LIGHT) */
-  --HEADER-BORDER-COLOR: hsl(240, 60%, 97%);
+  --HEADER-BORDER-COLOR: hsl(0, 0%, 66%);
+  --HEADER-BG-COLOR: hsl(243, 35%, 89%);
+  --HEADER-TEXT: hsl(243, 79%, 61%);
 
   /* ? DIVIDER */
   --DIVIDER: hsl(243, 60%, 70%);
@@ -16,11 +18,14 @@
   --HERO-LINEAR-GRADIENT: linear-gradient(hsla(243, 68%, 48%, 0.6), hsla(243, 68%, 48%, 0.6));
   --HERO-BORDER-COLOR: hsl(0, 6%, 94%);
   --HERO-BTN-BG-COLOR: hsl(0, 0%, 100%);
-  --HERO-BTN-BG-COLOR-HOVER: hsl(242, 100%, 50%);
-  --HERO-BTN-SHADOW-COLOR: hsl(243, 68%, 30%);
+  --HERO-BTN-BG-COLOR-HOVER: hsl(243, 77%, 72%);
+  --HERO-BTN-SHADOW-COLOR: hsl(243, 54%, 51%);
 
   /* ? DESCRIPTION SECTION (LIGHT) */
   --DESCRIPTION-BG-COLOR: hsl(240, 60%, 98%);
+
+  /* DASHBOARD AND OTHER PAGES */
+  --BTN-HOVER: hsl(243, 54%, 51%);
 }
 
 [data-theme="dark"] {
@@ -30,6 +35,8 @@
 
   /* ? HEADER SECTION (DARK) */
   --HEADER-BORDER-COLOR: hsl(240, 20%, 45%);
+  --HEADER-BG-COLOR: hsl(240, 20%, 45%);
+  --HEADER-TEXT: hsl(243, 76%, 95%);
 
   /* ? DIVIDER */
   --DIVIDER: hsl(240, 20%, 60%);

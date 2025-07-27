@@ -27,12 +27,13 @@
   font-size: 2rem;
   padding-top: 0.8em;
   font-family: var(--font-corben), serif;
-  /* transform: scale(1.2); */
+  color: white;
 }
 
 .hero__body {
   line-height: 1.8;
   font-weight: 500;
+  color: white;
 }
 
 .hero__link {
