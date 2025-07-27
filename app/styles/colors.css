@@ -1,46 +1,50 @@
 :root {
-  --TEXT-COLOR: hsl(0, 0%, 9%);
-  --BACKGROUND-COLOR: hsl(0, 10%, 85%);
-  --PRIMARY-COLOR: hsl(0, 7%, 30%);
-  --CONSTANT-COLOR: hsl(0, 0%, 100%);
-  --site-theme: hsl(0, 7%, 30%);
+  --TEXT-COLOR: hsl(246, 76%, 5%);
+  --BACKGROUND-COLOR: hsl(240, 60%, 99%);
+  --PRIMARY-COLOR: hsl(243, 68, 48%);
+  --CONSTANT-COLOR: hsl(243, 100%, 93%);
+  --site-theme: hsl(242, 100%, 62%);
   --gray-text: hsl(0, 0%, 20%);
 
   /* ? HEADER SECTION (LIGHT) */
-  --HEADER-BORDER-COLOR: hsl(0, 6%, 94%);
+  --HEADER-BORDER-COLOR: hsl(240, 60%, 97%);
 
   /* ? DIVIDER */
-  --DIVIDER: hsl(0, 7%, 30%);
+  --DIVIDER: hsl(243, 60%, 70%);
 
   /* ? HERO SECTION (LIGHT)*/
-  --HERO-LINEAR-GRADIENT: linear-gradient(hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0.6));
+  --HERO-LINEAR-GRADIENT: linear-gradient(hsla(243, 68%, 48%, 0.6), hsla(243, 68%, 48%, 0.6)); 
   --HERO-BORDER-COLOR: hsl(0, 6%, 94%);
   --HERO-BTN-BG-COLOR: hsl(0, 0%, 100%);
-  --HERO-BTN-BG-COLOR-HOVER: hsl(0, 0%, 90%);
-  --HERO-BTN-SHADOW-COLOR: hsl(0, 2%, 80%);
+  --HERO-BTN-BG-COLOR-HOVER: hsl(242, 100%, 50%); 
+  --HERO-BTN-SHADOW-COLOR: hsl(243, 68%, 30%);  
+
 
   /* ? DESCRIPTION SECTION (LIGHT) */
-  --DESCRIPTION-BG-COLOR: hsl(0, 0%, 96%);
+  --DESCRIPTION-BG-COLOR: hsl(240, 60%, 98%);
 }
 
 [data-theme="dark"] {
-  --TEXT-COLOR: hsl(0, 0%, 93%);
-  --BACKGROUND-COLOR: hsl(0, 0%, 4%);
+  --TEXT-COLOR: hsl(243, 76%, 95%);
+  --BACKGROUND-COLOR: hsl(240, 23%, 11%);
   --gray-text: hsl(0, 0%, 84%);
 
   /* ? HEADER SECTION (DARK) */
-  --HEADER-BORDER-COLOR: hsl(0, 0%, 55%);
+  --HEADER-BORDER-COLOR: hsl(240, 20%, 45%);
 
   /* ? DIVIDER */
-  --DIVIDER: hsl(0, 0%, 100%);
+  --DIVIDER: hsl(240, 20%, 60%);
 
   /* ? HERO SECTION (DARK) */
-  --HERO-LINEAR-GRADIENT: linear-gradient(hsla(0, 0%, 20%, 0.6), hsla(0, 0%, 20%, 0.6));
+  --HERO-LINEAR-GRADIENT: linear-gradient(hsla(243, 68%, 48%, 0.6), hsla(243, 68%, 48%, 0.6));
   --HERO-BORDER-COLOR: hsl(0, 0%, 55%);
-  --HERO-BTN-BG-COLOR: hsl(0, 0%, 0%);
-  --HERO-BTN-BG-COLOR-HOVER: hsl(0, 0%, 20%);
-  --HERO-BTN-SHADOW-COLOR: hsl(0, 100%, 3%);
+  --HERO-BTN-BG-COLOR: hsl(242, 100%, 50%); 
+  --HERO-BTN-BG-COLOR-HOVER: hsl(242, 100%, 40%);  
+  --HERO-BTN-SHADOW-COLOR: hsl(242, 100%, 30%); 
+
+
 
   /* ? DESCRIPTION SECTION (DARK) */
-  --DESCRIPTION-BG-COLOR: hsl(0, 0%, 2%);
+  --DESCRIPTION-BG-COLOR: hsl(240, 20%, 15%);
+
 }
