@@ -40,8 +40,8 @@ In order to generate the prisma client, follow these steps:
 1. Make sure you have updated the following environment variables on `.env`:
 
 ```
-GOOGLE_ID=google-client-id
-GOOGLE_SECRET=google-client-secret
+GOOGLE_CLIENT_ID=google-client-id
+GOOGLE_CLIENT_SECRET=google-client-secret
 
 NEXTAUTH_URL=http://localhost:3000
 NEXTAUTH_SECRET=run `openssl rand -base64 32` and replace here
@@ -60,7 +60,7 @@ pnpm dev
 ```
 
 - Sign in with Google by click 'Sign In' the top right of the header
-- You should now see your credentials in the User collection of the Atlas Cloud DB
+- You should be redirected to the admin dashboard
 
 ## Seeding the database
 
@@ -81,10 +81,11 @@ pnpm dev
 │   │   └── links/          # Endpoints to retrieve generated links
 │   ├── box/                # Public-facing page for viewing submissions and admin responses
 │   ├── dashboard/          # Admin dashboard for managing boxes and responding to submissions
-│   ├── hooks/              #
 │   ├── submit/             # Public-facing page for submitting anonymous suggestions to a box
+│   ├── hooks/              # Custom React hooks for fetching data
 │   ├── components/         # Reusable React components
 │   └── styles/             # Global and module CSS for styling the app
+├── middleware.js           # Middleware handling URL rewrites and routing logic
 ├── lib/                    # Shared libraries and utilities
 ├── prisma/                 # Prisma schema and queries
 ├── utils/                  # Utilities and helpers for the project
