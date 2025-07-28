@@ -6,7 +6,6 @@ function DescSection() {
   return (
     <section className={styles.description}>
       <h2 className={styles.description__title}>Describing how it works</h2>
-
       {items.map((item, i) => (
         <DescFeature
           key={`${i + 1}_${item.featName.slice(0, 5)}_${item.featName.slice(-1, -6)}`}

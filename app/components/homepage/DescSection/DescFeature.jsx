@@ -13,7 +13,10 @@ function DescFeature({ num, featName, featDesc, imgSrc, altText, rtl }) {
 
   return (
     <div className={styles.description__content}>
-      <div className={styles.description__content__header__container}>
+      <div className={
+        rtl ? styles.description__content__header__container__rtl : styles.description__content__header__container
+      }
+      >
         <p className={styles.description__content__number}>
           {[num.toString(), "."].join("")}
         </p>
