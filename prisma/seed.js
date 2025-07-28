@@ -26,9 +26,9 @@ const boxData
 
 const submissionData = [
   { message: "Not Pikachu" },
-  // { message: "Lugia" },
-  // { message: "Totodile" },
-  // { message: "Pikachu" },
+  { message: "Lugia" },
+  { message: "Totodile" },
+  { message: "Pikachu" },
 ];
 
 // WARNING: This function deletes the user's box/submission data currently on the database and seeds it with example data
