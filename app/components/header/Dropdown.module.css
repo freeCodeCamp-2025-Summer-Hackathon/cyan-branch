@@ -71,17 +71,16 @@
   font-weight: bold;
   letter-spacing: 1px;
   background: none;
-  border: 2px solid white;
+  border: 2px solid var(--HEADER-TEXT);
   padding: 0.5em 1em;
   border-radius: 10px;
-  text-transform: uppercase;
   cursor: pointer;
+  background-color: var(--PRIMARY-COLOR);
   transition:
-    color 0.2s ease,
+    background-color 0.2s ease,
     border-color 0.2s ease;
 }
 
 .signIn__btn:hover {
-  color: rgb(219, 219, 219);
-  border-color: rgb(219, 219, 219);
+  background-color: var(--BTN-HOVER);
 }

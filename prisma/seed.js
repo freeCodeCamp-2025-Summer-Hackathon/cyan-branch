@@ -1,3 +1,4 @@
+import minimist from "minimist";
 // Cannot use '@' import as Node.js doesn't recognise it (when running prisma/seed.js)
 import prisma from "../lib/prisma.js";
 import {
@@ -5,8 +6,17 @@ import {
   createSubmission,
 } from "./queries.js";
 
-// Enter Atlas Cloud User.id here:
-const adminId = "atlas-cloud-user-id-string";
+const args = minimist(process.argv.slice(2));
+const adminEmail = args.email;
+
+const admin = await prisma.user.findUnique({
+  where: { email: adminEmail },
+});
+if (!admin) {
+  throw new Error(`Admin user with email ${adminEmail} not found`);
+}
+
+const adminId = admin.id;
 
 const boxData
   = {
@@ -16,17 +26,34 @@ const boxData
 
 const submissionData = [
   { message: "Not Pikachu" },
-  { message: "Lugia" },
-  { message: "Totodile" },
-  { message: "Pikachu" },
+  // { message: "Lugia" },
+  // { message: "Totodile" },
+  // { message: "Pikachu" },
 ];
 
-// WARNING: This function deletes all box/submission data currently on the database and seeds it with example data
+// WARNING: This function deletes the user's box/submission data currently on the database and seeds it with example data
 async function run() {
   try {
-    // Clear existing data
-    await prisma.submission.deleteMany();
-    await prisma.box.deleteMany();
+    // Clear existing user data
+    await prisma.submission.deleteMany({
+      where: {
+        box: {
+          adminId,
+        },
+      },
+    });
+    await prisma.link.deleteMany({
+      where: {
+        box: {
+          adminId,
+        },
+      },
+    });
+    await prisma.box.deleteMany({
+      where: {
+        adminId,
+      },
+    });
 
     // Seed with example box and submissions
     const box = await createBox(adminId, boxData);

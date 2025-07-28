@@ -64,13 +64,8 @@ pnpm dev
 
 ## Seeding the database
 
-1. Copy your User.id property from the Atlas Cloud database to the following variable in `prisma/seed.js`:
-
-```
-adminId = "longAdminIdString";
-```
-
-2. Run `pnpm db:seed`
+1. Ensure you have already signed up with Google
+2. Run `pnpm db:seed --email=youremail@example.com`
 3. You should now see an example box and suggestions on the admin dashboard
 
 ## Project Structure
@@ -84,7 +79,9 @@ adminId = "longAdminIdString";
 │   │   ├── submissions/    # Endpoints to submit and retrieve anonymous submissions for each box
 │   │   ├── voicebox/       # Endpoints to validate and redirect to the appropriate page
 │   │   └── links/          # Endpoints to retrieve generated links
-│   ├── dashboard/          # Admin dashboard for managing boxes and viewing submissions
+│   ├── box/                # Public-facing page for viewing submissions and admin responses
+│   ├── dashboard/          # Admin dashboard for managing boxes and responding to submissions
+│   ├── hooks/              #
 │   ├── submit/             # Public-facing page for submitting anonymous suggestions to a box
 │   ├── components/         # Reusable React components
 │   └── styles/             # Global and module CSS for styling the app
