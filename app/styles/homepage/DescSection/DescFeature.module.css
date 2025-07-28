@@ -38,6 +38,14 @@
 
 /*! Media Query */
 
+@media screen and (max-width: 768px) {
+  .description__content__header__container__rtl {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .description__content__body__container {
     flex-flow: row;
@@ -45,6 +53,14 @@
 
   .rtl {
     flex-flow: row-reverse;
+  }
+
+  .description__content__header__container__rtl {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1em;
+    margin-right: 4%;
   }
 
   .description__content__body {
