@@ -90,7 +90,7 @@ export default function HeaderDropdown() {
               onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
               className={styles.signIn__btn}
             >
-              Sign In
+              Sign in
             </button>
           )}
     </>
