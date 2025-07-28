@@ -40,8 +40,8 @@ In order to generate the prisma client, follow these steps:
 1. Make sure you have updated the following environment variables on `.env`:
 
 ```
-GOOGLE_ID=google-client-id
-GOOGLE_SECRET=google-client-secret
+GOOGLE_CLIENT_ID=google-client-id
+GOOGLE_CLIENT_SECRET=google-client-secret
 
 NEXTAUTH_URL=http://localhost:3000
 NEXTAUTH_SECRET=run `openssl rand -base64 32` and replace here
@@ -60,17 +60,12 @@ pnpm dev
 ```
 
 - Sign in with Google by click 'Sign In' the top right of the header
-- You should now see your credentials in the User collection of the Atlas Cloud DB
+- You should be redirected to the admin dashboard
 
 ## Seeding the database
 
-1. Copy your User.id property from the Atlas Cloud database to the following variable in `prisma/seed.js`:
-
-```
-adminId = "longAdminIdString";
-```
-
-2. Run `pnpm db:seed`
+1. Ensure you have already signed up with Google
+2. Run `pnpm db:seed --email=youremail@example.com`
 3. You should now see an example box and suggestions on the admin dashboard
 
 ## Project Structure
@@ -84,10 +79,13 @@ adminId = "longAdminIdString";
 │   │   ├── submissions/    # Endpoints to submit and retrieve anonymous submissions for each box
 │   │   ├── voicebox/       # Endpoints to validate and redirect to the appropriate page
 │   │   └── links/          # Endpoints to retrieve generated links
-│   ├── dashboard/          # Admin dashboard for managing boxes and viewing submissions
+│   ├── box/                # Public-facing page for viewing submissions and admin responses
+│   ├── dashboard/          # Admin dashboard for managing boxes and responding to submissions
 │   ├── submit/             # Public-facing page for submitting anonymous suggestions to a box
+│   ├── hooks/              # Custom React hooks for fetching data
 │   ├── components/         # Reusable React components
 │   └── styles/             # Global and module CSS for styling the app
+├── middleware.js           # Middleware handling URL rewrites and routing logic
 ├── lib/                    # Shared libraries and utilities
 ├── prisma/                 # Prisma schema and queries
 ├── utils/                  # Utilities and helpers for the project
