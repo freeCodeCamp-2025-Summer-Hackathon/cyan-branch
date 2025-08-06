@@ -1,7 +1,7 @@
 .card__container {
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  gap: 1em;
   background-color: var(--site-theme);
   border-radius: 0.4rem;
   transition: background-color 0.2s ease;
@@ -10,6 +10,11 @@
   list-style: none;
 }
 
+.submission {
+  font-size: 1.2rem;
+}
+
 .response {
   font-style: italic;
+  font-weight: bold;
 }

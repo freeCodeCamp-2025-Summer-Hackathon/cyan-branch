@@ -46,6 +46,7 @@ export default function PublicBoxPage({ params }) {
       <div className={styles.box__container}>
         <h1 className={styles.title}>{box.name}</h1>
         <p className={styles.description}>{box.description}</p>
+        <p className={styles.explanation}>Admin responses are shown in bold and italic.</p>
 
         {submissions.length > 0
           ? (

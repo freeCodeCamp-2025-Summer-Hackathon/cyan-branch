@@ -1,8 +1,11 @@
 .card__container {
-  background-color: var(--site-theme);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--PRIMARY-COLOR);
   border-radius: 0.4rem;
   transition: background-color 0.2s ease;
   padding: 1.2rem;
+  gap: 1em;
   color: white;
   list-style: none;
 }
@@ -12,6 +15,10 @@
   justify-content: space-between;
   gap: 1em;
   align-items: center;
+}
+
+.message {
+  font-size: 1.2rem;
 }
 
 .response__form {
@@ -30,6 +37,11 @@
   font-size: 0.85rem;
   color: #333;
   transition: background-color 0.2s;
+}
+
+.response {
+  font-weight: bold;
+  font-style: italic;
 }
 
 .textarea {
