@@ -8,7 +8,7 @@
   gap: 1em;
   max-width: 500px;
   margin: 0 auto;
-  margin-top: 3rem;
+  margin-top: 5rem;
 }
 
 .title {
@@ -27,7 +27,7 @@
   padding: 0.75rem 1rem;
   font-size: 1.5rem;
   font-weight: 800;
-  background-color: var(--site-theme);
+  background-color: var(--PRIMARY-COLOR);
   color: white;
   border: none;
   border-radius: 0.4rem;
@@ -36,7 +36,7 @@
 }
 
 .button:hover {
-  background-color: hsl(0, 7%, 38%);
+  background-color: var(--BTN-HOVER);
 }
 
 .textarea {

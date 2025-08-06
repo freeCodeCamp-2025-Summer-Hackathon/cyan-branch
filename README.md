@@ -1,94 +1,117 @@
-# Cyan Branch: Voice Box
+# VoiceBox
 
-An anonymous suggestion box for workplaces, communities, or schools.
+VoiceBox is a simple and secure anonymous suggestion box for workplaces, communities, or schools. It empowers open communication by allowing anyone to submit feedback anonymously, while giving admins a streamlined way to review and respond to submissions.
 
-### User Stories:
+### Key Features
 
-- As an admin, I can create a box and share a submission link.
-- As a user, I can submit anonymous feedback.
-- As an admin, I can review and respond to submissions.
+- **Create a Box** – Admins can quickly set up a new suggestion box and generate a unique link to share with their team, group, or community.
+- **Anonymous Submissions** – Users can submit honest, anonymous feedback without needing to sign in or reveal their identity.
+- **Admin Dashboard** – Admins can view all submissions, respond to them directly, and manage feedback from a clean and focused interface.
 
-## Prerequisites
+![Hero section showing two people in a workplace, overlaid with sign-up instructions.](public/images/readme/hero-demo.png)
+![Admin dashboard view of a trivia night suggestion box, with example submissions and responses.](public/images/readme/admin-box-demo.png)
 
-### NodeJS and NPM
+## Getting Started
 
-Check you have Node and NPM installed:
+### 1. Clone the Repository
 
-`node -v`
-
-If not, you can install them by going to [NodeJS installation guide](https://nodejs.org/en/download).
-
-### PNPM
-
-You can install pnpm with:
-
-`npm install -g pnpm@latest-10`
-
-## Installing dependencies
-
-`pnpm install`
-
-## Prisma Setup
-
-In order to generate the prisma client, follow these steps:
-
-- Create a .env file contaning the .env.example content
-- Generate the client with `pnpm dlx prisma generate`
-
-## Auth Setup
-
-1. Make sure you have updated the following environment variables on `.env`:
-
+```bash
+git clone https://github.com/freeCodeCamp-2025-Summer-Hackathon/VoiceBox.git
+cd voicebox
 ```
-GOOGLE_CLIENT_ID=google-client-id
-GOOGLE_CLIENT_SECRET=google-client-secret
+
+### 2. Install Dependencies
+
+```bash
+npm install -g pnpm@latest-10
+pnpm install
+```
+
+### 3. Set Up Environment Variables
+
+- Create a `.env` file in the root directory
+- Copy the contents from `.env.example` into it
+- Fill in the required values:
+
+```env
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
 
 NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=run `openssl rand -base64 32` and replace here
+NEXTAUTH_SECRET=your-random-generated-secret
 ```
 
-2. Update prisma client:
+Generate a secure secret with:
 
-```
-pnpm prisma generate
+```bash
+openssl rand -base64 32
 ```
 
-3. Test Google sign-in:
+### 4. Generate Prisma Client
 
+```bash
+pnpm dlx prisma generate
 ```
+
+### 5. Start the Dev Server
+
+```bash
 pnpm dev
 ```
 
-- Sign in with Google by click 'Sign In' the top right of the header
-- You should be redirected to the admin dashboard
+Click `Sign In with Google` on the homepage to authenticate and access the admin dashboard.
 
-## Seeding the database
+## Seeding the Database
 
-1. Ensure you have already signed up with Google
-2. Run `pnpm db:seed --email=youremail@example.com`
-3. You should now see an example box and suggestions on the admin dashboard
+1. Ensure you've already signed in with Google
+2. Run the following (replace the email with your own):
+
+```
+pnpm db:seed --email=youremail@example.com
+```
+
+You should now see an example box and some test suggestions in the admin dashboard.
 
 ## Project Structure
 
 ```
 /
-├── app/                    # Next.js app router pages
+├── app/                    # Next.js App Router pages
 │   ├── api/                # API routes
-│   │   ├── auth/           # User authentication with Google OAuth and NextAuth
-│   │   ├── boxes/          # Endpoints to create and retrieve anonymous suggestion boxes
-│   │   ├── submissions/    # Endpoints to submit and retrieve anonymous submissions for each box
-│   │   ├── voicebox/       # Endpoints to validate and redirect to the appropriate page
-│   │   └── links/          # Endpoints to retrieve generated links
-│   ├── box/                # Public-facing page for viewing submissions and admin responses
-│   ├── dashboard/          # Admin dashboard for managing boxes and responding to submissions
-│   ├── submit/             # Public-facing page for submitting anonymous suggestions to a box
-│   ├── hooks/              # Custom React hooks for fetching data
-│   ├── components/         # Reusable React components
-│   └── styles/             # Global and module CSS for styling the app
-├── middleware.js           # Middleware handling URL rewrites and routing logic
+│   │   ├── auth/           # Google OAuth and NextAuth
+│   │   ├── boxes/          # Create & retrieve suggestion boxes
+│   │   ├── submissions/    # Submit & retrieve anonymous feedback
+│   │   ├── voicebox/       # Validate and route to appropriate pages
+│   │   └── links/          # Retrieve generated links
+│   ├── box/                # Public page for viewing submissions & responses
+│   ├── components/         # Reusable components
+│   ├── dashboard/          # Admin dashboard
+│   ├── hooks/              # Custom React hooks
+│   ├── styles/             # Global CSS
+│   └── submit/             # Page for submitting anonymous suggestions
+├── middleware.js           # URL rewrites and routing logic
 ├── lib/                    # Shared libraries and utilities
 ├── prisma/                 # Prisma schema and queries
-├── utils/                  # Utilities and helpers for the project
+├── utils/                  # Utility functions
 ├── public/                 # Static assets
-└── README.md               # Documentation for local setup
+└── README.md               # Documentation
 ```
+
+## Tech Stack
+
+- Next.js 14 (App Router)
+- JavaScript + CSS
+- Prisma + MongoDB
+- NextAuth.js (Google OAuth)
+
+## Contributors
+
+- [Luke Sullivan](https://github.com/sukelully)
+- [JoJo](https://github.com/JoJoJo-JoJoJo)
+- [Michael Boateng](https://github.com/michaelboateng1)
+- [Teddy ASSIH](https://github.com/Ionfinisher)
+- [Alexandra Cromarty](https://github.com/AlexandraCromarty)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).

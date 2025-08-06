@@ -9,6 +9,11 @@ export default function SubmissionCard({ submission, toggleDropdown, dropdownOpe
         <p className={styles.message}>{submission.message}</p>
         <button className={styles.button} type="button" onClick={() => toggleDropdown(submission.id)}>Respond</button>
       </div>
+      {submission.response && (
+        <p className={styles.response}>
+          {submission.response}
+        </p>
+      )}
       {submission.id === dropdownOpenId && (
         <form action={boundAction} className={styles.response__form}>
           <textarea
