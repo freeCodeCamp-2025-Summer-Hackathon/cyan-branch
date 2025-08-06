@@ -16,7 +16,7 @@ VoiceBox is a simple and secure anonymous suggestion box for workplaces, communi
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/voicebox.git
+git clone https://github.com/freeCodeCamp-2025-Summer-Hackathon/VoiceBox.git
 cd voicebox
 ```
 
