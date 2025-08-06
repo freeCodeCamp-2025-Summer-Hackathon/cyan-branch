@@ -1,12 +1,15 @@
-# Cyan Branch: Voice Box
+# VoiceBox
 
-An anonymous suggestion box for workplaces, communities, or schools.
+VoiceBox is a simple and secure anonymous suggestion box for workplaces, communities, or schools. It empowers open communication by allowing anyone to submit feedback anonymously, while giving admins a streamlined way to review and respond to submissions.
 
-### User Stories:
+### Key Features
 
-- As an admin, I can create a box and share a submission link.
-- As a user, I can submit anonymous feedback.
-- As an admin, I can review and respond to submissions.
+- **Create a Box** – Admins can quickly set up a new suggestion box and generate a unique link to share with their team, group, or community.
+- **Anonymous Submissions** – Users can submit honest, anonymous feedback without needing to sign in or reveal their identity.
+- **Admin Dashboard** – Admins can view all submissions, respond to them directly, and manage feedback from a clean and focused interface.
+
+![Hero section featuring two people talking in a workplace overlayed with signup instructions.](public/images/readme/hero-demo.png)
+![Admin box page for a Trivia night suggestion box featuring two user submissions and admin responses](public/images/readme/admin-box-demo.png)
 
 ## Prerequisites
 

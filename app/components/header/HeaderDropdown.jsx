@@ -54,7 +54,7 @@ export default function HeaderDropdown() {
                     )
                   : (
                       <Image
-                        src="/images/user-icon.svg"
+                        src="/images/header-dropdown/user-icon.svg"
                         alt="User Icon"
                         width={32}
                         height={32}
